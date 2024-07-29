@@ -1,7 +1,7 @@
 apiVersion: theme.halo.run/v1alpha1
 kind: Theme
 metadata:
-  name: theme-starter
+  name: dongnan-v1
 spec:
   displayName: Theme Starter
   author:

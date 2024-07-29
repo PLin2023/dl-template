@@ -1,18 +1,642 @@
 <!DOCTYPE html>
-<html
-  xmlns:th="https://www.thymeleaf.org"
-  th:replace="~{layout :: html(head = null,content = ~{::content})}"
->
-  <th:block th:fragment="content">
-    <ul>
-      <li th:each="post : ${posts.items}">
-        <a
-          th:href="@{${post.status.permalink}}"
-          th:text="${post.spec.title}"
-        ></a>
+<html xmlns:th="https://www.thymeleaf.org" th:replace="~{layout :: html(head = ~{::head}, content = ~{::content})}">
+<th:block th:fragment="head">
+  <meta charset="utf-8" />
+  <meta http-equiv=”X-UA-Compatible” content=”IE=Edge,chrome=1″/>
+  <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=0" />
+  <meta name="format-detection" content="email=no" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+  <title>瓯明阀门集团有限公司 - 官方网站</title>
+  <meta name="keywords" />
+  <meta name="description" content="Ouming Valve Group Co.,Ltd.  " />
+</th:block>
+
+
+<th:block th:fragment="content">
+  <header>
+    <a class="logo" href="/" target="_blank"><img th:src="@{/assets/img/om_logo.svg}"
+                                                  alt="瓯明阀门集团有限公司" /></a>
+    <a class="header_en" href="//www.omvalve.com"><span>English</span></a>
+    <ul class="header-icon">
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+    <ul class="header-menu" th:with="menuItems = ${menuFinder.getPrimary()?.menuItems}">
+      <li class="" th:each="menuItem : ${menuItems}">
+        <h4>
+          <a
+            th:href="@{${menuItem.status.href}}"
+            th:target="${menuItem.spec.target?.value}"
+            th:text="${menuItem.status.displayName}"
+          >
+          </a>
+        </h4>
+        <div class="headTwo" th:if="${menuItem.children} != null" th:with="children = ${menuItem.children}">
+          <p th:each="child : ${children}">
+            <a
+              th:href="@{${child.status.href}}"
+              th:target="${child.spec.target?.value}"
+              th:text="${child.status.displayName}"
+            >
+            </a>
+          </p>
+        </div>
       </li>
     </ul>
-    <a th:if="${posts.hasPrevious()}" th:href="@{${posts.prevUrl}}">上一页</a>
-    <a th:if="${posts.hasNext()}" th:href="@{${posts.nextUrl}}">下一页</a>
-  </th:block>
+  </header>
+  <div class="index-banner">
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide" th:each="banner : ${bannerFinder.listAll()}">
+          <a>
+            <img th:src="@{${banner.spec.bannerImagePc}}" />
+            <img th:src="@{${banner.spec.bannerImageMobile}}" />
+            <div class="banner-txt">
+              <h1 th:utext="${banner.spec.title}"></h1>
+              <h3 th:utext="${banner.spec.subtitle}"></h3>
+              <!--<img src="~/Dist/img/pingzi.png"/>>-->
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+  <div class="index1">
+    <div class="container">
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <a class="active wow fadeInRight" type="1983">
+              <h1>1983</h1>
+              <p>1983年，瓯明第一台阀门（旋塞阀）正式出厂，标志着瓯明发展史的开始。</p>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a class="active wow fadeInRight" type="1986">
+              <h1>1986</h1>
+              <p>1986年低压管件批量投产</p>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a class="active wow fadeInRight" type="1987">
+              <h1>1987</h1>
+              <p>
+                1987年，卫生管道阀门系列正式投入批量生产，这意味着我们的产品质量得到认可，贸易范围扩大到食品行业。</p>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a class="active wow fadeInRight" type="1990">
+              <h1>1990</h1>
+              <p>球阀于该年正式量产，产品逐步多样化。</p>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a class="active wow fadeInRight" type="1993">
+              <h1>1993</h1>
+              <p>1993年，购入第一个瓯明厂房，创办铸造厂，正式加入铸造行业。</p>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a class="active wow fadeInRight" type="1996">
+              <h1>1996</h1>
+              <p>瓯明于1996年购入第二个生产厂房，占地面积6800平方米。我们的贸易规模逐步扩大。</p>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a class="active wow fadeInRight" type="1999">
+              <h1>1999</h1>
+              <p>1999年12月21日，我们注册了瓯明商标，以更好的品牌形象迈入21世纪。</p>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a class="active wow fadeInRight" type="2003">
+              <h1>2003</h1>
+              <p>2003年购入进口光谱仪，实现实验室精密仪器测量。</p>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a class="active wow fadeInRight" type="2004">
+              <h1>2004</h1>
+              <p>温州瓯明流体铸业有限公司于2004年正式成立，标志着我公司管理更加专业化、系统化。</p>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a class="active wow fadeInRight" type="2005">
+              <h1>2005</h1>
+              <p>2005年通过ISO90001:2008质量管理体系认证。</p>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a class="active wow fadeInRight" type="2006">
+              <h1>2006</h1>
+              <p>2006年，我们成立了国际贸易部，这意味着我们开始拓展海外市场，更好地与国际接轨。</p>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a class="active wow fadeInRight" type="2007">
+              <h1>2007</h1>
+              <p>2007年注册进出口贸易许可证，正式加入国际贸易行业。</p>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a class="active wow fadeInRight" type="2008">
+              <h1>2008</h1>
+              <p>2008年，瓯明购入蓝田标准厂房，扩大铸造生产用地。</p>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a class="active wow fadeInRight" type="2010">
+              <h1>2010</h1>
+              <p>
+                2010年注册成立温州瓯明流体蓝田分公司购入德国OBLF台式光谱仪等材料分析及性能检测设备，为产品质量监督提供了进一步的保障。</p>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a class="active wow fadeInRight" type="2011">
+              <h1>2011</h1>
+              <p>2011年通过了TS认证和首个专利申请。随着公司规模的扩大，技术也在不断发展。</p>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a class="active wow fadeInRight" type="2013">
+              <h1>2013</h1>
+              <p>2013年获得国际认可并获得欧盟CE认证。</p>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a class="active wow fadeInRight" type="2014">
+              <h1>2014</h1>
+              <p>2014年，我公司正式更名为浙江瓯明流体铸业有限公司。</p>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a class="active wow fadeInRight" type="2016">
+              <h1>2016</h1>
+              <p>我们很荣幸获得TUV CE和PED认证。</p>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a class="active wow fadeInRight" type="2017">
+              <h1>2017</h1>
+              <p>2017年公司通过API 6D/API
+                607认证/搬至现代化厂房内，厂房使用面积30000多平方米，注册资金增资为5000万。</p>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a class="active wow fadeInRight" type="2018">
+              <h1>2018</h1>
+              <p>2018年自主研发制造全/半自动生产线投入使用。</p>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a class="active wow fadeInRight" type="2019">
+              <h1>2019</h1>
+              <p>2019年，公司通过浙江省高新技术企业认证，公司产品得到用户进一步认可。</p>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a class="active wow fadeInRight" type="2020">
+              <h1>2020</h1>
+              <p>2020年阀门厂区30000平方米，铸造厂区12000平方米，新建铸造厂区15000平方米，综合厂房使用面积57000平方米。年生产铸件1500吨，年生产管阀件数50万件。
+              </p>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a class="active wow fadeInRight" type="未来">
+              <h1>未来</h1>
+              <p>开拓 永无止境</p>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+  </div>
+  <div class="index2">
+    <div class="container">
+      <div class="index2-left">
+        <h1 class="wow fadeInUp">关于<strong>瓯明</strong></h1>
+        <p class="wow fadeInUp">公司成立于1983年，是一家集开发、设计、制造、经营不锈钢阀门为一体的科技型企业。瓯明30多年来一直致力于提供更安全、更高效、更智能的流体控制系统。
+        </p>
+        <a class="wow fadeInUp" href="/About"><span>查看更多</span></a>
+        <div class="left-img wow fadeInUp">
+          <a href="/About/foundry">
+            <img th:src="@{/assets/img/index2-1.jpg}" />
+            <h4>铸造基地</h4>
+          </a>
+          <a href="/WhyUs">
+            <img th:src="@{/assets/img/index2-2.jpg}" />
+            <h4>质量控制</h4>
+          </a>
+        </div>
+      </div>
+      <div class="index2-right">
+        <div class="right-img wow fadeInUp">
+          <img src="/upload/9398/202012/b92a39febd6b40d883d5d344f2d2cc63.jpg" alt=关于瓯明 title=关于瓯明/>
+        </div>
+        <ul class="right-txt wow fadeInUp">
+          <li>ISO9001</li>
+          <li>SIL</li>
+          <li>CE</li>
+          <li>API607</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="index3">
+    <div class="container">
+      <h1 class="wow fadeInUp">应用领域</h1>
+      <div class="index3-list wow fadeInUp">
+        <ul>
+          <li class="active">
+            <div class="list-img">
+              <img src="/upload/9398/202012/2d52bc906c1f457688edc0e52d1bf0d8.jpg" alt=石油行业
+                   title=石油行业/>
+            </div>
+            <div class="list-txt">
+              <h4>石油行业</h4>
+              <p>
+                石油是天然存在的气态、液态和固态碳氢化合物的混合物。石油也可以分为原油、天然气、天然气和天然焦油，但“石油”仍然被用作“原油”的定义。</p>
+              <img th:src="@{/assets/img/left.png}" />
+            </div>
+          </li>
+          <li class="active">
+            <div class="list-img">
+              <img src="/upload/9398/202012/ab45cc47b81c4d39b5e0ae2b96c2a5b3.jpg" alt=化学工业
+                   title=化学工业/>
+            </div>
+            <div class="list-txt">
+              <h4>化学工业</h4>
+              <p>我国化工行业细分产品、利润贡献最大的是化工企业。</p>
+              <img th:src="@{/assets/img/left.png}" />
+            </div>
+          </li>
+          <li class="active">
+            <div class="list-img">
+              <img src="/upload/9398/202101/554154cef5084ac48990a737214c666f.jpg" alt=船舶行业
+                   title=船舶行业/>
+            </div>
+            <div class="list-txt">
+              <h4>船舶行业</h4>
+              <p>
+                船舶工业是为航运业、海洋开发及国防建设提供技术装备的综合性产业，对钢铁、石化、轻工、纺织、装备制造、电子信息等重点产业发展和扩大出口具有较强的带动作用。</p>
+              <img th:src="@{/assets/img/left.png}" />
+            </div>
+          </li>
+          <li class="active">
+            <div class="list-img">
+              <img src="/upload/9398/202012/524a9a372cca4d28a26aa83fc9be798d.jpg" alt=造纸业
+                   title=造纸业/>
+            </div>
+            <div class="list-txt">
+              <h4>造纸业</h4>
+              <p>
+                有机械和手动两种形式。该机构在造纸机上连续工作。将适合纸张质量的纸浆用水稀释到一定浓度。纸的一部分首先被压成纸，然后被脱水成纸的一部分。</p>
+              <img th:src="@{/assets/img/left.png}" />
+            </div>
+          </li>
+          <li class="active">
+            <div class="list-img">
+              <img src="/upload/9398/202012/018a9f4cc738412fad3f3f43be1533c7.jpg" alt=天然气
+                   title=天然气/>
+            </div>
+            <div class="list-txt">
+              <h4>天然气</h4>
+              <p>
+                天然气主要用作燃料，可生产炭黑、化工产品和液化石油气。天然气生产的丙烷和丁烷是现代工业的重要原料。天然气主要由气态低分子烃和非烃类气体组成。</p>
+              <img th:src="@{/assets/img/left.png}" />
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="index4">
+    <div class="container">
+      <h1 class="wow fadeInUp">产品中心</h1>
+      <a class="wow fadeInUp" href="/Product-6096.html">
+        <h2>法兰球阀</h2>
+        <img th:src="@{/assets/img/index4-1.png}" />
+        <span></span>
+      </a>
+      <a class="wow fadeInUp" href="/Product-6097.html">
+        <h2>多通球阀</h2>
+        <img th:src="@{/assets/img/index4-2.png}" />
+        <span></span>
+      </a>
+      <a class="wow fadeInUp" href="/Product-6095.html">
+        <h2>片式球阀</h2>
+        <img th:src="@{/assets/img/index4-3.png}" />
+        <span></span>
+      </a>
+      <a class="wow fadeInUp" href="/Product-6098.html">
+        <h2>自动阀</h2>
+        <img th:src="@{/assets/img/index4-4.png}" />
+        <span></span>
+      </a>
+    </div>
+  </div>
+  <div class="index5">
+    <h1>核心优势</h1>
+    <ul class="index5-list">
+      <li class="list-img wow fadeInUp"><img th:src="@{/assets/img/index5-1.jpg}" /></li>
+      <li class="list-txt wow fadeInUp">
+        <div class="index5-txt">
+          <h2>技术研发</h2>
+          <p>瓯明拥有30多名工程师进行产品开发和创新，我们的研发资金充足。</p>
+          <a href="/WhyUs/TechControl"><span>查看更多</span></a>
+        </div>
+      </li>
+    </ul>
+    <ul class="index5-list">
+      <li class="list-img wow fadeInUp"><img th:src="@{/assets/img/index5-2.jpg}" /></li>
+      <li class="list-txt wow fadeInUp">
+        <div class="index5-txt">
+          <h2>质量控制</h2>
+          <p>公司引进了光谱分析仪、超声波检测仪、磁粉检测仪、氦质谱仪等设备，有力地保证了产品质量。</p>
+          <a href="/WhyUs"><span>查看更多</span></a>
+        </div>
+      </li>
+    </ul>
+    <ul class="index5-list">
+      <li class="list-img wow fadeInUp"><img th:src="@{/assets/img/index5-3.jpg}" /></li>
+      <li class="list-txt wow fadeInUp">
+        <div class="index5-txt">
+          <h2>服务中心</h2>
+          <p>瓯明拥有一支多渠道团队，可以随时随地快速响应。</p>
+          <p>一对一个性化服务允许您跟踪每一个产品附表！完善的售后服务保障体系，解决您购买后的各种问题。</p>
+          <a href="/Service"><span>查看更多</span></a>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="index6">
+    <div class="container">
+      <h1 class="wow fadeInUp">新闻资讯</h1>
+      <div class="index6-swiper">
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <a class="wow fadeInUp" href="/DetNew-11557.html">
+                <div class="index6-time">
+                  <h3>12.15</h3>
+                  <h2>2022</h2>
+                </div>
+                <div class="index6-img">
+                  <img src="/upload/9398/202212/142c8f2cd478429ca2e1b51d956ad3bf.png"
+                       alt="瓯明阀门集团有限公司 - 2021社会责任报告 title=瓯明阀门集团有限公司 - 2021社会责任报告" />
+                </div>
+                <div class="index6-txt">
+                  <h4>瓯明阀门集团有限公司 - 2021社会责任报告</h4>
+                  <p></p>
+                </div>
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a class="wow fadeInUp" href="/DetNew-11558.html">
+                <div class="index6-time">
+                  <h3>12.15</h3>
+                  <h2>2022</h2>
+                </div>
+                <div class="index6-img">
+                  <img src="/upload/9398/202212/7af55eaf1595423798f17b21114d5f96.png"
+                       alt="瓯明阀门集团有限公司 - 2021年“浙江制造”认证 质量诚信报告 title=瓯明阀门集团有限公司
+                                         - 2021年“浙江制造”认证
+                                         质量诚信报告" />
+                </div>
+                <div class="index6-txt">
+                  <h4>瓯明阀门集团有限公司 - 2021年“浙江制造”认证 质量诚信报告</h4>
+                  <p></p>
+                </div>
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a class="wow fadeInUp" href="/DetNew-10552.html">
+                <div class="index6-time">
+                  <h3>10.25</h3>
+                  <h2>2020</h2>
+                </div>
+                <div class="index6-img">
+                  <img src="/upload/9398/202101/8a662d72fd484553a2b08becb0e7e8a5.jpg"
+                       alt="2020瓯明阀门参加上海国际泵阀展览会"
+                       title="2020瓯明阀门参加上海国际泵阀展览会" />
+                </div>
+                <div class="index6-txt">
+                  <h4>2020瓯明阀门参加上海国际泵阀展览会</h4>
+                  <p>瓯明阀门参加了2020上海国际泵阀展览会。瓯明的摊位拥挤。瓯明阀门作为常客，以优质..</p>
+                </div>
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a class="wow fadeInUp" href="/DetNew-10551.html">
+                <div class="index6-time">
+                  <h3>09.02</h3>
+                  <h2>2020</h2>
+                </div>
+                <div class="index6-img">
+                  <img src="/upload/9398/202101/8cd2c4c3b5cf4b0bb6f07d25dae2733e.jpg"
+                       alt="2020中国国际石油石化技术装备展览会"
+                       title="2020中国国际石油石化技术装备展览会" />
+                </div>
+                <div class="index6-txt">
+                  <h4>2020中国国际石油石化技术装备展览会</h4>
+                  <p>中国国际石油石化技术装备展览会是国际石油石化行业的例会。Cippe吸引了来自65个..</p>
+                </div>
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a class="wow fadeInUp" href="/DetNew-11544.html">
+                <div class="index6-time">
+                  <h3>08.16</h3>
+                  <h2>2019</h2>
+                </div>
+                <div class="index6-img">
+                  <img src="/upload/9398/202101/7a117fb0187a4aab8abc7e11b63557c2.jpg"
+                       alt="2019上海阀门世界亚洲博览会" title="2019上海阀门世界亚洲博览会" />
+                </div>
+                <div class="index6-txt">
+                  <h4>2019上海阀门世界亚洲博览会</h4>
+                  <p>2019年8月，来自世界各地的阀门供应商和经销商参加了上海阀门世界亚洲博览会，讨论..</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="chat-online">
+    <div class="chat-button">
+      <span><img th:src="@{/assets/img/chat.png}" /><img th:src="@{/assets/img/chat-icon.png}" /></span>
+      <strong>在线聊天</strong>
+    </div>
+    <div class="chat-content">
+      <span></span>
+      <h3>在线聊天</h3>
+      <h4>您好，在线聊天前请在这里留下您的姓名和电子邮件，这样我们就不会错过您的留言并顺利与您联系。</h4>
+      <ul class="chat-form">
+        <li>
+          <h5>*<strong>姓名 :</strong></h5>
+          <input type="text" id="txtName" name="txtName" value="" />
+        </li>
+        <li>
+          <h5>*<strong>电话 :</strong></h5>
+          <input type="text" id="txtPhone" name="txtPhone" value="" />
+        </li>
+        <li>
+          <h5>*<strong>邮件 :</strong></h5>
+          <input type="text" id="txtEmail" name="txtEmail" value="" />
+        </li>
+        <li>
+          <h5>*<strong>内容 :</strong></h5>
+          <textarea name="txtContent" id="txtContent" rows="" cols=""></textarea>
+        </li>
+        <li>
+          <button id="BtnMes">立即发送</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <footer>
+    <div class="container">
+      <a class="footer-logo wow fadeInUp" href="index.html"><img th:src="@{/assets/img/logoW.svg}" /></a>
+      <ul class="footer-menu wow fadeInUp">
+        <li>
+          <h4>关于瓯明</h4>
+          <p><a href="/About">公司总部</a></p>
+          <p><a href="/About/foundry">铸造基地</a></p>
+        </li>
+        <li>
+          <h4>产品中心</h4>
+          <p><a href="/Product-6095.html">片式球阀</a></p>
+          <p><a href="/Product-6096.html">法兰球阀</a></p>
+          <p><a href="/Product-6097.html">多通球阀</a></p>
+          <p><a href="/Product-6098.html">自动阀</a></p>
+        </li>
+        <li>
+          <h4>核心优势</h4>
+          <p><a href="/WhyUs">质量控制</a></p>
+          <p><a href="/WhyUs/Process">生产控制</a></p>
+          <p><a href="/WhyUs/TechControl">技术支持</a></p>
+        </li>
+        <li>
+          <h4>联系方式</h4>
+          <p>地址: 浙江省温州市龙湾区永中街道天中路1555号</p>
+          <p>电话: 0577-86878788</p>
+          <p>传真: 0577-86371713</p>
+          <p>邮箱: ouming@ouming.com</p>
+        </li>
+      </ul>
+      <div class="footer-contact wow fadeInUp">
+        <h3>联系我们</h3>
+        <div class="footer-input">
+          <input placeholder="姓名 *" type="text" name="txtName" id="txtName" value="" />
+          <input placeholder="邮箱 *" type="text" name="txtEmail" id="txtEmail" value="" />
+        </div>
+        <textarea placeholder="内容 *" name="txtContent" rows="" cols=""></textarea>
+        <button id="BtnMesSend">提 交</button>
+      </div>
+      <div class="footer-share">
+        <a href="https://twitter.com/CmOlthf1vPuxlwD" rel="nofollow"><img
+          th:src="@{/assets/img/fs1.png}" /></a>
+        <a href="https://www.facebook.com/oumingvalve" rel="nofollow"><img
+          th:src="@{/assets/img/fs2.png}" /></a>
+        <a href="https://www.linkedin.com/in/helen-zhu-a84a31145/" rel="nofollow"><img
+          th:src="@{/assets/img/fs3.png}" /></a>
+        <a href="https://www.youtube.com/channel/UCzLdRCTZOqSG58s9e334xqw"><img
+          th:src="@{/assets/img/fs4.png}" /></a>
+        <a href="skype:18757724201?chat"><img th:src="@{/assets/img/fs5.png}" /></a>
+        <a href="https://api.whatsapp.com/send?phone=+8618757724201&text=Hello"><img
+          th:src="@{/assets/img/fs6.png}" /></a>
+      </div>
+      <div class="footer-bottom">
+        <p>Copyright © 2020 瓯明阀门集团有限公司 版权所有 <a href="//beian.miit.gov.cn" rel="nofollow"
+                                                             target="_blank"
+                                                             style="color:#fff;">浙ICP备19009122号-1</a></p>
+      </div>
+    </div>
+
+    <script>
+
+      $("#BtnMesSend").click(function() {
+        if ($("#txtName").val() == "") {
+
+          swal({ title: " Please enter Name！", text: " " });
+          return false;
+        }
+
+
+        if ($("#txtEmail").val() == "") {
+          swal({ title: "Please enter E-Mail ！", text: " " });
+
+          return false;
+        }
+        if ($("#txtContent").val() == "") {
+          swal({ title: "Please enter Content ！", text: " " });
+
+          return false;
+        }
+        $.ajax({
+          type: "POST",
+          url: "/Contact/AddConent",
+          data: {
+            Namet: $("#txtName").val(),
+            Eamil: $("#txtEmail").val(),
+            Memo: $("#txtContent").val(),
+            t: Math.random(),
+          },
+          success: function(data) {
+            if (data.Success) {
+              swal({
+                title: "Success ",
+                text: "Thanks",
+                timer: 1000,
+                type: "success",
+                showConfirmButton: false,
+              }, function() {
+                //// $(".modal-search-doctor").modal('hide')
+                //setTimeout(function () {
+                //    getPage(1)
+                //    //$(document).on('click', '.modal-search-doctor tbody tr', function () {
+                //    //    $('.modal-search-doctor-details').fadeIn();
+                //    //})
+                //}, 300)
+                $("#txtName").attr("value", "");
+                $("#txtPhone").attr("value", "");
+                $("#txtEmail").attr("value", "");
+                $("#txtContent").attr("value", "");
+
+                swal.close();
+                4;
+              });
+            } else {
+              swal({
+                title: "Error",
+                text: data.Message,
+                timer: 1000,
+                type: "error",
+                showConfirmButton: false,
+              }, function() {
+                // $(".modal-search-doctor").modal('hide')
+                swal.close();
+              });
+            }
+          },
+        });
+      });
+
+    </script>
+
+  </footer>
+</th:block>
+
 </html>

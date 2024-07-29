@@ -1,26 +1,107 @@
 <!DOCTYPE html>
 <html
-  lang="en"
-  xmlns:th="https://www.thymeleaf.org"
-  th:fragment="html (head,content)"
+        lang="en"
+        xmlns:th="https://www.thymeleaf.org"
+        th:fragment="html (head,content)"
 >
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, maximum-scale=2"
+            name="viewport"
+            content="width=device-width, initial-scale=1, maximum-scale=2"
     />
     <title th:text="${site.title}"></title>
-    <link rel="stylesheet" th:href="@{/assets/css/style.css}" />
+    <link rel="stylesheet" th:href="@{/assets/css/style.css}"/>
     <script th:src="@{/assets/js/main.js}"></script>
+    <link rel="stylesheet" type="text/css" th:href="@{/assets/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/assets/css/animate.min.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/assets/css/swiper.min.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/assets/css/common.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/assets/css/index.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/assets/sweetalert/sweetalert.css}"/>
+    <script th:src="@{/assets/js/jquery-3.2.1.min.js}" type="text/javascript" charset="utf-8"></script>
     <th:block th:if="${head != null}">
-      <th:block th:replace="${head}" />
+        <th:block th:replace="${head}"/>
     </th:block>
-  </head>
-  <body th:style="'background-color: '+${theme.config.style.background_color ?: '#f2f2f2'}">
-    <section>
-      <th:block th:replace="${content}" />
-    </section>
-  </body>
+</head>
+<body th:style="'background-color: '+${theme.config.style.background_color ?: '#f2f2f2'}">
+<section>
+    <th:block th:replace="${content}"/>
+</section>
+</body>
+<script th:src="@{/assets/js/bootstrap.min.js}" type="text/javascript" charset="utf-8"></script>
+<script th:src="@{/assets/js/wow.js}" type="text/javascript" charset="utf-8"></script>
+<script th:src="@{/assets/js/swiper.min.js}" type="text/javascript" charset="utf-8"></script>
+<script th:src="@{/assets/js/common.js}" type="text/javascript" charset="utf-8"></script>
+<script th:src="@{/assets/js/index.js}" type="text/javascript" charset="utf-8"></script>
+<script th:src="@{/assets/sweetalert/sweetalert.min.js}" type="text/javascript" charset="utf-8"></script>
+<script>
+    $("#BtnMes").click(function () {
+        if ($("#txtName").val() == "") {
+            swal({title: " Please enter Name！", text: " "})
+            return false;
+        }
+
+        if ($("#txtPhone").val() == "") {
+            swal({title: "Please enter Phone ！", text: " "})
+            return false;
+        }
+        if ($("#txtEmail").val() == "") {
+            swal({title: "Please enter E-Mail ！", text: " "})
+            return false;
+        }
+        if ($("#txtContent").val() == "") {
+            swal({title: "Please enter Content ！", text: " "})
+            return false;
+        }
+        $.ajax({
+            type: "POST",
+            url: "/Contact/AddConent",
+            data: {
+                Namet: $("#txtName").val(),
+                Eamil: $("#txtEmail").val(),
+                Conent: $("#txtPhone").val(),
+                Memo: $("#txtContent").val(),
+                t: Math.random()
+            },
+            success: function (data) {
+                if (data.Success) {
+                    swal({
+                        title: "Success ",
+                        text: "Thanks",
+                        timer: 1000,
+                        type: "success",
+                        showConfirmButton: false,
+                    }, function () {
+                        //// $(".modal-search-doctor").modal('hide')
+                        //setTimeout(function () {
+                        //    getPage(1)
+                        //    //$(document).on('click', '.modal-search-doctor tbody tr', function () {
+                        //    //    $('.modal-search-doctor-details').fadeIn();
+                        //    //})
+                        //}, 300)
+                        $("#txtName").attr("value", "");
+                        $("#txtPhone").attr("value", "");
+                        $("#txtEmail").attr("value", "");
+                        $("#txtContent").attr("value", "");
+                        swal.close();
+                    });
+                } else {
+                    swal({
+                        title: "Error",
+                        text: data.Message,
+                        timer: 1000,
+                        type: "error",
+                        showConfirmButton: false,
+                    }, function () {
+                        // $(".modal-search-doctor").modal('hide')
+                        swal.close();
+                    });
+                }
+            }
+        });
+    })
+</script>
+
 </html>
