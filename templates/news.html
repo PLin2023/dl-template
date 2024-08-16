@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html
+  xmlns:th="https://www.thymeleaf.org"
+  th:replace="~{layout :: html(head = ~{::head},content = ~{::content})}"
+>
+<th:block th:fragment="head">
+  <link rel="stylesheet" type="text/css" th:href="@{/assets/css/news.css}" />
+</th:block>
+<th:block th:fragment="content">
+  <div class="news-details">
+    <div class="container">
+      <div class="news-title">
+        <p><a href="/">首页</a> > <a href="/News">新闻中心</a></p>
+      </div>
+      <div class="details-title">
+        <h1 th:text="${post.spec.title}"></h1>
+        <ul>
+          <li><strong>浏览人数:</strong>271</li>
+          <li><strong>来源:</strong>展台编辑</li>
+          <li><strong>出版时间:</strong>2019-08-08</li>
+        </ul>
+      </div>
+      <div class="details-content">
+        <div class="__kindeditor_paste__" th:utext="${post.content.content}">
+        </div>
+      </div>
+      <div class="details-bottom">
+        <p>
+          下一页:
+          <a href="#">没有更多数据</a>
+        </p>
+        <button onclick="history.back(-1)">返回列表</button>
+      </div>
+    </div>
+  </div>
+</th:block>
+</html>

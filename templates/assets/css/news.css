@@ -1,0 +1,490 @@
+.news-content {
+    width: 100%;
+    overflow: hidden;
+    padding: 65px 0 30px;
+}
+.news-content .news-left {
+    width: 960px;
+    overflow: hidden;
+    float: left;
+}
+.news-content .news-right {
+    width: 390px;
+    overflow: hidden;
+    float: right;
+}
+.news-left .news-menu {
+    width: 100%;
+    overflow: hidden;
+    margin: 0 0 55px;
+}
+.news-left .news-menu a {
+    display: block;
+    width: 130px;
+    height: 35px;
+    line-height: 35px;
+    color: #666666;
+    overflow: hidden;
+    border-radius: 18px;
+    text-align: center;
+    margin: 0 30px 0 0;
+    background-color: #dcdcdc;
+    font-size: 14px;
+    float: left;
+}
+.news-left .news-menu a:hover {
+    color: #09a9ab;
+}
+.news-left .news-menu a.active {
+    color: #FFFFFF;
+    background-color: #09a9ab;
+}
+.news-left .news-list {
+    width: 100%;
+    overflow: hidden;
+}
+.news-left .news-list a {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    border-bottom: 1px solid #efefef;
+    margin: 0 0 35px;
+}
+.news-left .news-list a:last-of-type {
+    border: none;
+    margin: 0;
+}
+.news-left .news-list a img {
+    width: 265px;
+    height: 210px;
+    float: left;
+    margin: 0 40px 35px 0;
+}
+.news-left .news-list a .list-txt {
+    width: calc(100% - 305px);
+    width: -moz-calc(100% - 305px);
+    width: -webkit-calc(100% - 305px);
+    height: 210px;
+    overflow: hidden;
+    float: left;
+    color: #999999;
+    line-height: 25px;
+    font-size: 16px;
+    position: relative;
+}
+.news-list a .list-txt h5 {
+    font-size: 16px;
+    line-height: 25px;
+    color: #666666;
+}
+.news-list a .list-txt h2 {
+    font-size: 30px;
+    color: #333333;
+    line-height: 35px;
+    min-height: 40px;
+    max-height: 70px;
+    overflow: hidden;
+    margin: 15px 0 5px;
+}
+.news-list a .list-txt p {
+    width: 100%;
+    height: 50px;
+    overflow: hidden;
+}
+.news-list a .list-txt span {
+    display: block;
+    width: 120px;
+    height: 35px;
+    overflow: hidden;
+    border-radius: 18px;
+    padding: 1px;
+    text-align: center;
+    background-image: linear-gradient(#0099b4,#46bbbb);
+    position: absolute;
+    left: 0;
+    bottom: 5px;
+}
+.news-list a .list-txt span em {
+    display: block;
+    width: 100%;
+    height: 100%;
+    line-height: 33px;
+    color: #09a9ab;
+    border-radius: 17px;
+    background-color: #f3f8fc;
+    overflow: hidden;
+    transition: all 0.5s;
+}
+.news-list a:hover .list-txt h2 {
+    color: #09a9ab;
+}
+.news-list a .list-txt span:hover em {
+    background-color: transparent;
+    color: #FFFFFF;
+}
+.news-right .right-product {
+    width: 100%;
+    overflow: hidden;
+}
+.right-product h3 {
+    line-height: 69px;
+    color: #000000;
+    font-size: 28px;
+    border-bottom: 1px solid #efefef;
+    margin: 0 0 20px;
+    font-weight: bold;
+}
+.right-product .product-list {
+    width: 100%;
+    overflow: hidden;
+}
+.product-list a {
+    display: block;
+    width: calc(50% - 5px);
+    width: -moz-calc(50% - 5px);
+    width: -webkit-calc(50% - 5px);
+    overflow: hidden;
+    float: left;
+}
+.product-list a:nth-of-type(2n+1) {
+    margin: 0 10px 0 0;
+}
+.product-list a .product-img {
+    width: 100%;
+    overflow: hidden;
+    background-color: #f8f8f8;
+}
+.product-list a .product-img img {
+    width: 100%;
+    transition: all 0.5s;
+}
+.product-list a h4 {
+    width: 100%;
+    font-size: 14px;
+    line-height: 16px;
+    height: 32px;
+    overflow: hidden;
+    padding: 0 8px;
+    color: #333333;
+    margin: 10px 0;
+}
+.product-list a:hover .product-img img {
+    transform: scale(1.1);
+}
+.product-list a:hover h4 {
+    color: #09a9ab;
+    font-weight: bold;
+}
+.news-right .right-contact {
+    width: 100%;
+    overflow: hidden;
+    margin: 5px 0 0;
+}
+.right-contact h3 {
+    line-height: 70px;
+    color: #000000;
+    font-size: 28px;
+}
+.right-contact .contact-box {
+    width: 100%;
+    overflow: hidden;
+    background: url(../img/csBg.jpg) no-repeat center;
+    background-size: 100%;
+    padding: 30px 30px 20px;
+}
+.right-contact .contact-box .contact-txt {
+    width: 100%;
+    overflow: hidden;
+    padding: 15px 20px;
+    color: #666666;
+    font-size: 14px;
+    background-color: rgba(255,255,255,0.83);
+}
+.contact-txt p {
+    width: 100%;
+    overflow: hidden;
+    line-height: 20px;
+}
+.contact-txt p:first-of-type {
+    margin: 0 0 10px;
+}
+.contact-txt p span {
+    display: block;
+    width: 40px;
+    overflow: hidden;
+    float: left;
+}
+.contact-txt p em {
+    width: calc(100% - 40px);
+    width: -moz-calc(100% - 40px);
+    width: -webkit-calc(100% - 40px);
+    overflow: hidden;
+    float: right;
+}
+.right-contact .contact-box>a {
+    display: block;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    overflow: hidden;
+    background-color: #009894;
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 16px;
+    margin: 15px 0 0;
+    transition: all 0.5s;
+}
+.right-contact .contact-box>a:hover {
+    background-image: linear-gradient(#0099b4,#46bbbb);
+}
+.right-contact .contact-share {
+    width: 100%;
+    overflow: hidden;
+    margin: 24px 0 0;
+}
+.right-contact .contact-share a {
+    display: block;
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    border-radius: 50%;
+    position: relative;
+    background-color: #009794;
+    margin: 0 15px 0 5px;
+    float: left;
+    transition: all 0.5s;
+}
+.right-contact .contact-share a img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -12px 0 0 -12px;
+}
+.right-contact .contact-share a:hover {
+    background-image: linear-gradient(#0099b4,#46bbbb);
+}
+@media only screen and (max-width: 991px) {
+    .news-content .news-left {
+        width: 100%;
+    }
+    .news-content .news-right {
+        display: none;
+    }
+}
+@media only screen and (max-width: 767px) {
+    .news-left .news-menu {
+        margin: 0 0 15px;
+    }
+    .news-left .news-menu a {
+        margin: 0 30px 15px 0;
+        width: 110px;
+        height: 30px;
+        line-height: 30px;
+    }
+    .news-content {
+        padding: 30px 0 10px;
+    }
+    .news-left .news-list a {
+        margin: 0 0 25px;
+    }
+    .news-left .news-list a img {
+        width: 100%;
+        height: auto;
+        float: none;
+        margin: 0 0 20px;
+    }
+    .news-left .news-list a .list-txt {
+        width: 100%;
+        height: auto;
+        float: none;
+        line-height: 20px;
+        font-size: 14px;
+    }
+    .news-list a .list-txt h2 {
+        font-size: 24px;
+        line-height: 25px;
+        max-height: 50px;
+        margin: 10px 0;
+    }
+    .news-list a .list-txt span {
+        width: 120px;
+        height: 35px;
+        position: relative;
+        left: auto;
+        bottom: auto;
+        margin: 20px 0 25px;
+    }
+    .news-list a .list-txt p {
+        height: 60px;
+    }
+}
+@media only screen and (min-width: 992px) {
+    .news-content .news-left {
+        width: 100%;
+    }
+    .news-content .news-right {
+        display: none;
+    }
+}
+@media only screen and (min-width: 1200px) {
+    .news-content .news-left {
+        width: 715px;
+    }
+    .news-content .news-right {
+        display: block;
+    }
+}
+@media only screen and (min-width: 1450px) {
+    .news-content .news-left {
+        width: 960px;
+    }
+}
+/*æ–°é—»è¯¦æƒ…*/
+.news-details {
+    width: 100%;
+    overflow: hidden;
+    background-color: #f9f9f9;
+    padding: 125px 0 30px;
+}
+.news-details .news-title {
+    width: 100%;
+    height: 20px;
+    line-height: 20px;
+    color: #000000;
+    font-weight: bold;
+    overflow: hidden;
+    background: url(../img/home.png) no-repeat left center;
+    padding: 0 0 0 30px;
+    margin: 0 0 75px;
+}
+.news-details .news-title p {
+    width: 100px;
+    position: relative;
+    z-index: 1001;
+}
+.news-details .news-title a {
+    color: #000000;
+}
+.news-details .news-title a:hover {
+    color: #009794;
+    text-decoration: underline !important;
+}
+.details-title {
+    width: 100%;
+    overflow: hidden;
+    color: #949494;
+    text-align: center;
+}
+.details-title h1 {
+    font-size: 30px;
+    color: #333333;
+    margin: 0 0 20px;
+}
+.details-title strong {
+    color: #797979;
+    margin: 0 5px 0 0;
+}
+.details-title ul {
+    width: 100%;
+    overflow: hidden;
+}
+.details-title ul li {
+    display: inline-block;
+    margin: 0 5px;
+}
+.news-details .details-content {
+    width: 100%;
+    overflow: hidden;
+    border-top: 1px solid #cacaca;
+    border-bottom: 1px solid #cacaca;
+    padding: 30px 0 40px;
+    color: #949494;
+    line-height: 25px;
+    font-size: 16px;
+    margin: 35px 0 20px;
+}
+.news-details .details-content img {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+}
+.news-details .details-bottom {
+    width: 100%;
+    overflow: hidden;
+    line-height: 25px;
+    font-size: 16px;
+    color: #999999;
+}
+.news-details .details-bottom p {
+    width: calc(100% - 110px);
+    width: -moz-calc(100% - 110px);
+    width: -webkit-calc(100% - 110px);
+    line-height: 25px;
+    height: 25px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    float: left;
+}
+.news-details .details-bottom a {
+    color: #999999;
+}
+.news-details .details-bottom a:hover {
+    color: #009794;
+    font-weight: bold;
+    text-decoration: underline !important;
+}
+.news-details .details-bottom button {
+    width: 75px;
+    height: 30px;
+    float: right;
+    margin: 3px 10px 0 0;
+    overflow: hidden;
+    border: none;
+    font-size: 14px;
+    color: #FFFFFF;
+    border-radius: 3px;
+    background-color: #009794;
+}
+.news-details .details-bottom button:hover {
+    background-image: linear-gradient(#0099b4,#46bbbb);
+}
+@media only screen and (max-width: 991px) {
+    .news-details {
+        padding: 150px 0 30px;
+    }
+    .news-details .news-title {
+        margin: 0 0 30px;
+    }
+}
+@media only screen and (max-width: 767px) {
+    .news-details {
+        padding: 100px 0 30px;
+    }
+    .news-details .news-title {
+        margin: 0 0 20px;
+    }
+    .details-title h1 {
+        font-size: 22px;
+        line-height: 27px;
+        margin: 0 0 10px;
+    }
+    .news-details .details-content {
+        padding: 20px 0 30px;
+        margin: 15px 0 10px;
+        line-height: 20px;
+        font-size: 14px;
+    }
+    .news-details .details-bottom {
+        line-height: 20px;
+        font-size: 14px;
+    }
+    .news-details .details-bottom p {
+        width: 100%;
+        float: none;
+    }
+    .news-details .details-bottom button {
+        float: none;
+        margin: 10px 0 0;
+    }
+}
