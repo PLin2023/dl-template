@@ -21,6 +21,7 @@
   <link rel="stylesheet" type="text/css" th:href="@{/assets/css/index.css}" />
   <link rel="stylesheet" type="text/css" th:href="@{/assets/sweetalert/sweetalert.css}" />
   <script th:src="@{/assets/js/jquery-3.2.1.min.js}" type="text/javascript" charset="utf-8"></script>
+
   <th:block th:if="${head != null}">
     <th:block th:replace="${head}" />
   </th:block>
@@ -224,7 +225,11 @@
 <script th:src="@{/assets/js/swiper.min.js}" type="text/javascript" charset="utf-8"></script>
 <script th:src="@{/assets/js/common.js}" type="text/javascript" charset="utf-8"></script>
 <script th:src="@{/assets/js/index.js}" type="text/javascript" charset="utf-8"></script>
+<script th:src="@{/assets/js/zUI.js}" type="text/javascript" charset="utf-8"></script>
 <script th:src="@{/assets/sweetalert/sweetalert.min.js}" type="text/javascript" charset="utf-8"></script>
+<script th:src="@{/assets/js/factory.js}"  type="text/javascript" charset="utf-8"></script>
+<script th:src="@{/assets/js/foundry.js}"  type="text/javascript" charset="utf-8"></script>
+<script th:src="@{/assets/js/tech.js}"  type="text/javascript" charset="utf-8"></script>
 <script>
   $("#BtnMes").click(function() {
     if ($("#txtName").val() == "") {
@@ -291,6 +296,89 @@
       },
     });
   });
+</script>
+
+<script>
+  $(function() {
+    $("#SendMess2").click(function() {
+      if ($("#txtName2").val() == "") {
+        swal({
+          title: "请输入姓名！",
+          text: " ",
+          type: "warning"
+        });
+        return false;
+      }
+
+      if ($("#txtEmail2").val() == "") {
+        swal({
+          title: "请输入邮箱！",
+          text: " ",
+          type: "warning"
+        });
+        return false;
+      }
+
+      if ($("#txtContent2").val() == "") {
+        swal({
+          title: "请输入内容！",
+          text: " ",
+          type: "warning"
+        });
+        return false;
+      }
+
+      $.ajax({
+        type: "POST",
+        url: "/apis/api.consultation.plugin.halo.run/v1alpha1/consultations",
+        contentType: 'application/json',
+        data: JSON.stringify({
+          name: $("#txtName2").val(),
+          email: $("#txtEmail2").val(),
+          phone: $("#txtPhone2").val(),
+          fax: $("#txtFax2").val(),
+          content: $("#txtContent2").val(),
+          t: Math.random(),
+        }),
+        success: function(data) {
+          if (data.apiVersion) {
+            swal({
+              title: "提交成功",
+              text: "谢谢您的留言",
+              type: "success",
+              timer: 1000,
+              showConfirmButton: false
+            }, function() {
+              $("#txtName2").val("");
+              $("#txtPhone2").val("");
+              $("#txtEmail2").val("");
+              $("#txtFax2").val("");
+              $("#txtContent2").val("");
+              swal.close();
+            });
+          } else {
+            swal({
+              title: "错误",
+              text: data.Message || "提交失败，请稍后再试",
+              type: "error",
+              timer: 1000,
+              showConfirmButton: false
+            });
+          }
+        },
+        error: function() {
+          swal({
+            title: "错误",
+            text: "提交失败，请稍后再试",
+            type: "error",
+            timer: 1000,
+            showConfirmButton: false
+          });
+        }
+      });
+    });
+  });
+
 </script>
 
 </html>

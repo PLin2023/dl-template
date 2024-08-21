@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html
+        xmlns:th="https://www.thymeleaf.org"
+        th:replace="~{layout :: html(head = ~{::head},content = ~{::content})}"
+>
+<th:block th:fragment="head">
+    <link rel="stylesheet" type="text/css" th:href="@{/assets/css/service.css}"/>
+</th:block>
+<th:block th:fragment="content">
+    <div class="banner">
+        <img th:src="@{/assets/img/service.jpg}" />
+        <div class="banner-txt">
+            <h1>完善的售后服务，<br/>为您解决各种问题</h1>
+        </div>
+    </div>
+    <div class="service1">
+        <ul class="container">
+            <li class="wow fadeInUp">
+                <div class="service1-icon">
+                    <img th:src="@{/assets/img/service1-1.png}" />
+                </div>
+                <h2>迅速答复</h2>
+                <p>我们的销售团队整天在线。我们的工程师随时待命，以确保在遇到详细技术问题时的效率。</p>
+            </li>
+            <li class="wow fadeInUp">
+                <div class="service1-icon">
+                    <img th:src="@{/assets/img/service1-2.png}" />
+                </div>
+                <h2>专业服务</h2>
+                <p>优秀的专业团队服务。我们不仅拥有30多年的阀门制造和销售经验，而且拥有一支由30多名技术人员组成的团队，他们可以作为您的技术顾问来解决售后问题。</p>
+            </li>
+            <li class="wow fadeInUp">
+                <div class="service1-icon">
+                    <img th:src="@{/assets/img/service1-3.png}" />
+                </div>
+                <h2>质量可靠</h2>
+                <p>瓯明把质量控制作为重中之重。我们所有的产品都严格按照国内外标准生产管控本厂拥有完善的企业标准化体系，拥有完善的生产、加工、检测设备。</p>
+            </li>
+            <li class="wow fadeInUp">
+                <div class="service1-icon">
+                    <img th:src="@{/assets/img/service1-4.png}" />
+                </div>
+                <h2>高效生产</h2>
+                <p>我们拥有一支优秀的工程师队伍，不断开发和创新我们的阀门产品。我们还引进了德国、美国、日本等国的技术和技术设备。瓯明始终走在行业技术的前沿。</p>
+            </li>
+            <li class="wow fadeInUp">
+                <div class="service1-icon">
+                    <img th:src="@{/assets/img/service1-5.png}" />
+                </div>
+                <h2>交货快速</h2>
+                <p>收到预付款后立即下达生产指令。我们可根据您的要求制定运输方案，我们承诺按照包装标准按时交货。</p>
+            </li>
+            <li class="wow fadeInUp">
+                <div class="service1-icon">
+                    <img th:src="@{/assets/img/service1-6.png}" />
+                </div>
+                <h2>质量承诺</h2>
+                <p>自发货之日起12个月内为客户提供退换货服务。</p>
+                <p>在产品交易的整个过程中提供电子邮件和电话咨询。</p>
+                <p>市场和用户质量反馈执行率100%。</p>
+                <p>多渠道售后服务团队随时待命，为您解决购买后的任何问题。</p>
+            </li>
+        </ul>
+    </div>
+    <div class="service2">
+        <div class="container">
+            <h2 class="wow fadeInUp">瓯明阀门售后说明</h2>
+            <h4 class="wow fadeInUp">因产品本身质量问题无条件赔偿，但下列情况除外：</h4>
+            <p class="wow fadeInUp">产品选型与使用介质不匹配</p>
+            <p class="wow fadeInUp">管道中的杂质导致异常磨损</p>
+            <p class="wow fadeInUp">不遵守操作规程</p>
+            <p class="wow fadeInUp">没有定期保养</p>
+            <p class="wow fadeInUp">辅助材料在运输过程中损坏</p>
+        </div>
+    </div>
+    <div class="service3">
+        <div class="container">
+            <h3 class="wow fadeInUp">售后过程</h3>
+            <ul>
+                <li class="wow fadeInRight">
+                    <strong>1</strong>
+                    <span>客户反馈</span>
+                </li>
+                <li class="wow fadeInRight">
+                    <strong>2</strong>
+                    <span>提供照片 / 视频 / 不良品</span>
+                </li>
+                <li class="wow fadeInRight">
+                    <strong>3</strong>
+                    <span>本地经销商</span>
+                </li>
+                <li class="wow fadeInRight">
+                    <strong>4</strong>
+                    <span>提供售后服务</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="service4">
+        <div class="container">
+            <h3 class="wow fadeInUp">温馨提示</h3>
+            <p class="wow fadeInUp">建议在阀门前安装一个过滤器，以保持良好的性能，延长使用寿命。</p>
+            <p class="wow fadeInUp">通常，阀门需要每三个月进行一次检查和维护。</p>
+            <p class="wow fadeInUp">建议定期保养项目：清理滤网内的杂质，保养阀门密封，润滑运动部件。</p>
+        </div>
+    </div>
+</th:block>
+</html>

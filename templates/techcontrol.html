@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html
+        xmlns:th="https://www.thymeleaf.org"
+        th:replace="~{layout :: html(head = ~{::head},content = ~{::content})}"
+>
+<th:block th:fragment="head">
+    <link rel="stylesheet" type="text/css" th:href="@{/assets/css/quality.css}"/>
+</th:block>
+<th:block th:fragment="content">
+    <div class="banner">
+        <img th:src="@{/assets/img/tech.jpg}" />
+        <div class="banner-txt">
+            <h1>生产符合国际标准的<br/>高质量产品</h1>
+        </div>
+    </div>
+    <div class="tech1">
+        <div class="container">
+            <div class="tech1-list">
+                <ul class="wow fadeInUp">
+                    <li>
+                        <img th:src="@{/assets/202012/c2bf00debbc647f7b8dba0f754542de8.jpg}" alt="技术支持" title="技术支持" />
+                    </li>
+                    <li class="wow fadeInUp">
+                        <h1>技术支持</h1>
+                        <p>公司自成立以来，自主创新始终是公司发展的核心战略，已获得发明专利2项，实用新型专利18项。
+                            并在此以自主研发的产品线依托强大的研发团队和持续的研发投入，公司始终走在行业技术的前沿，为用户提供具竞争力的优质产品和服务。</p>
+                    </li>
+                </ul>
+                <ul class="wow fadeInUp">
+                    <li>
+                        <img th:src="@{/assets/202101/08d2d19610174623b9e37d7192a05622.jpg}" alt="片式球阀" title="片式球阀" />
+                    </li>
+                    <li class="wow fadeInUp">
+                        <h1>片式球阀</h1>
+                        <p>片式球阀具有扭矩小、密封性强的优点。我们的防静电阀杆和防静电阀的设计。这种阀门不仅更实用，而且使用寿命更长。</p>
+                    </li>
+                </ul>
+                <ul class="wow fadeInUp">
+                    <li>
+                        <img th:src="@{/assets/202012/2c5200b15a144a6c93c53eac0547eb21.jpg}" alt="法兰球阀" title="法兰球阀" />
+                    </li>
+                    <li class="wow fadeInUp">
+                        <h1>法兰球阀</h1>
+                        <p>瓯明生产的法兰球阀更安全可靠。除防静电设计外，我们的法兰球阀还可以采用石墨填料和垫片来达到防火的目的。</p>
+                    </li>
+                </ul>
+                <ul class="wow fadeInUp">
+                    <li>
+                        <img th:src="@{/assets/202101/47ed1d341b8a410cbfc5a6552ecbf00c.jpg}" alt="多通分配球阀" title="多通分配球阀" />
+                    </li>
+                    <li class="wow fadeInUp">
+                        <h1>多通分配球阀</h1>
+                        <p>瓯明的多通分配球阀采用分体式结构设计，安装位置占用面积小，侧装阀盖方便安装维修。保养侧阀盖连接可采用法兰连接、螺纹连接或承插焊连接，可满足一个阀门同时采用多种连接方式。</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="tech2">
+        <div class="container">
+            <h1 class="foundry-title wow fadeInUp">专利<strong>证书</strong></h1>
+            <div class="tech2-left wow fadeInUp">
+                <div class="left-img">
+                    <img th:src="@{/assets/202012/a878e5b80bb34903aa6ebc66a09acb20.jpg}" alt="专利证书" title="专利证书" />
+                </div>
+                <span>专利证书</span>
+            </div>
+            <div class="tech2-right wow fadeInUp">
+                <div class="tech2-pc">
+                    <h5>企业获得的资质和荣誉，是对企业过去成绩的肯定，是对企业创造辉煌未来的鼓励和鞭策企业。到迈向新阶段，是我们不屈不挠、永不停歇的信念。</h5>
+                    <div class="tech2-list wow fadeInUp">
+                        <ul>
+                            <li class="active">
+                                <img th:src="@{/assets/202012/a878e5b80bb34903aa6ebc66a09acb20.jpg}" alt="专利证书" title="专利证书" />
+                            </li>
+                            <li class="">
+                                <img th:src="@{/assets/202012/282d5c7420944701899a3124383930a8.jpg}" alt="专利证书" title="专利证书" />
+                            </li>
+                            <li class="">
+                                <img th:src="@{/assets/202012/ebc29008d2d044c0bbbdd107aa2a27d2.jpg}" alt="专利证书" title="专利证书" />
+                            </li>
+                            <li class="">
+                                <img th:src="@{/assets/202012/1231850c694042ba98d04d66c2176724.jpg}" alt="专利证书" title="专利证书" />
+                            </li>
+                            <li class="">
+                                <img th:src="@{/assets/202012/109a29bbb0034d639cd6286c9f9d821f.jpg}" alt="专利证书" title="专利证书" />
+                            </li>
+                            <li class="">
+                                <img th:src="@{/assets/202012/de4f98378ef64c6dbe31b9dc053c1894.jpg}" alt="专利证书" title="专利证书" />
+                            </li>
+                            <li class="">
+                                <img th:src="@{/assets/202012/917b91e343f84daf8412df7d1dd65768.jpg}" alt="专利证书" title="专利证书" />
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="tech2-sm">
+                    <div class="tech2-swiper">
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <a class="active">
+                                        <img th:src="@{/assets/202012/a878e5b80bb34903aa6ebc66a09acb20.jpg}" alt="专利证书" title="专利证书" />
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a class="">
+                                        <img th:src="@{/assets/202012/282d5c7420944701899a3124383930a8.jpg}" alt="专利证书" title="专利证书" />
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a class="">
+                                        <img th:src="@{/assets/202012/ebc29008d2d044c0bbbdd107aa2a27d2.jpg}" alt="专利证书" title="专利证书" />
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a class="">
+                                        <img th:src="@{/assets/202012/1231850c694042ba98d04d66c2176724.jpg}" alt="专利证书" title="专利证书" />
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a class="">
+                                        <img th:src="@{/assets/202012/109a29bbb0034d639cd6286c9f9d821f.jpg}" alt="专利证书" title="专利证书" />
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a class="">
+                                        <img th:src="@{/assets/202012/de4f98378ef64c6dbe31b9dc053c1894.jpg}" alt="专利证书" title="专利证书" />
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a class="">
+                                        <img th:src="@{/assets/202012/917b91e343f84daf8412df7d1dd65768.jpg}" alt="专利证书" title="专利证书" />
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-scrollbar"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</th:block>
+</html>

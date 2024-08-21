@@ -1,0 +1,398 @@
+.service1 {
+    width: 100%;
+    overflow: hidden;
+    padding: 50px 0 0;
+}
+.service1 li {
+    width: 420px;
+    height: 430px;
+    border: 1px solid #e2e2e2;
+    float: left;
+    color: #666666;
+    font-size: 16px;
+    line-height: 30px;
+    border-radius: 0 0 90px 0;
+    padding: 89px 59px 0 29px;
+    position: relative;
+    transition: background-image 0.5s;
+    cursor: pointer;
+}
+.service1 li:nth-of-type(3n+1),.service1 li:nth-of-type(3n+2) {
+    margin: 55px 70px 55px 0;
+}
+.service1 li:nth-of-type(3n) {
+    margin: 55px 0;
+}
+.service1 li h2 {
+    font-family: "wigrumweb-bold";
+    font-size: 30px;
+    height: 48px;
+    color: #333333;
+    position: relative;
+    margin: 0 0 20px;
+}
+.service1 li h2:after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: #d2d2d2;
+    margin: 10px 0 0 1px;
+    transition: all 0.5s;
+}
+.service1 li .service1-icon {
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #f1f1f1;
+    position: absolute;
+    left: 21px;
+    top: -63px;
+}
+.service1 li .service1-icon img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -36px 0 0 -36px;
+}
+.service1 li:hover {
+    color: #FFFFFF;
+    padding: 90px 60px 0 30px;
+    border: none;
+    background-image: linear-gradient(-60deg,#0099cc,#009794);
+    background-image: -ms-linear-gradient(-60deg,#0099cc,#009794);
+    background-image: -moz-linear-gradient(-60deg,#0099cc,#009794);
+    background-image: -webkit-linear-gradient(-60deg,#0099cc,#009794);
+}
+.service1 li:hover .service1-icon {
+    top: -62px;
+    left: 22px;
+}
+.service1 li:hover h2 {
+    color: #FFFFFF;
+}
+.service1 li:hover h2:after {
+    background-color: #FFFFFF;
+}
+@media only screen and (max-width: 991px) {
+    .service1 li {
+        margin: 55px auto 90px !important;
+        float: none;
+    }
+}
+@media only screen and (max-width: 767px) {
+    .service1 li {
+        width: 100%;
+        height: auto;
+        font-size: 14px;
+        line-height: 25px;
+        padding: 54px 25px 40px 24px;
+        margin: 35px auto 60px !important;
+        border-radius: 0 0 60px 0;
+    }
+    .service1 li:last-of-type {
+        font-size: 14px;
+        line-height: 25px;
+        margin: 35px auto 30px !important;
+    }
+    .service1 li:hover {
+        padding: 55px 25px 40px;
+    }
+    .service1 li .service1-icon {
+        width: 90px;
+        height: 90px;
+        left: 21px;
+        top: -45px;
+    }
+    .service1 li .service1-icon img {
+        width: 50px;
+        margin: -25px 0 0 -25px;
+    }
+    .service1 li h2 {
+        font-size: 24px;
+        height: 40px;
+        margin: 0 0 15px;
+    }
+    .service1 li h2:after {
+        width: 48px;
+    }
+}
+@media only screen and (min-width: 992px) {
+    .service1 li:nth-of-type(2n+1) {
+        margin: 55px 70px 55px 28px;
+    }
+    .service1 li:nth-of-type(2n) {
+        margin: 55px 0;
+    }
+}
+@media only screen and (min-width: 1200px) {
+    .service1 li {
+        width: 356px;
+        height: 400px;
+        line-height: 25px;
+        padding: 79px 30px 0 29px;
+    }
+    .service1 li h2 {
+        font-size: 24px;
+        height: 40px;
+        margin: 0 0 20px;
+    }
+    .service1 li:hover {
+        padding: 80px 31px 0 30px;
+    }
+    .service1 li:nth-of-type(3n+1),.service1 li:nth-of-type(3n+2) {
+        margin: 55px 40px 40px 0;
+    }
+    .service1 li:nth-of-type(3n) {
+        margin: 55px 0 40px;
+    }
+}
+@media only screen and (min-width: 1450px) {
+    .service1 li {
+        width: 420px;
+        height: 430px;
+        line-height: 30px;
+        padding: 89px 59px 0 29px;
+    }
+    .service1 li h2 {
+        font-size: 30px;
+        height: 48px;
+        margin: 0 0 20px;
+    }
+    .service1 li:hover {
+        padding: 90px 60px 0 30px;
+    }
+    .service1 li:nth-of-type(3n+1),.service1 li:nth-of-type(3n+2) {
+        margin: 55px 70px 55px 0;
+    }
+    .service1 li:nth-of-type(3n) {
+        margin: 55px 0;
+    }
+}
+.service2 {
+    width: 100%;
+    overflow: hidden;
+    color: #666666;
+    font-size: 18px;
+    line-height: 32px;
+}
+.service2 h2 {
+    font-family: "wigrumweb-bold";
+    text-align: center;
+    font-size: 30px;
+    color: #009794;
+}
+.service2 h4 {
+    font-size: 18px;
+    font-family: "wigrumweb-bold";
+    text-align: center;
+    color: #009794;
+    margin: 10px 0 20px;
+}
+.service2 p {
+    width: 265px;
+    height: 32px;
+    margin: 0 auto;
+    position: relative;
+    padding: 0 0 0 27px;
+}
+.service2 p:before {
+    content: '1';
+    display: block;
+    width: 20px;
+    height: 20px;
+    font-size: 16px;
+    border-radius: 50%;
+    border: 1px solid #666666;
+    text-align: center;
+    line-height: 17px;
+    position: absolute;
+    left: 0;
+    top: 7px;
+}
+.service2 p:nth-of-type(2):before {
+    content: '2';
+}
+.service2 p:nth-of-type(3):before {
+    content: '3';
+}
+.service2 p:nth-of-type(4):before {
+    content: '4';
+}
+.service2 p:nth-of-type(5):before {
+    content: '5';
+}
+@media only screen and (max-width: 767px) {
+    .service2 {
+        font-size: 14px;
+        line-height: 34px;
+    }
+    .service2 h2 {
+        font-size: 24px;
+    }
+    .service2 h4 {
+        font-size: 14px;
+        margin: 5px 0 10px;
+    }
+    .service2 p {
+        width: 210px;
+    }
+}
+.service3 {
+    width: 100%;
+    overflow: hidden;
+}
+.service3 h3 {
+    font-size: 26px;
+    color: #333333;
+    font-family: "wigrumweb-bold";
+    text-align: center;
+    margin: 55px 0 15px;
+}
+.service3 ul {
+    width: 100%;
+    overflow: hidden;
+}
+.service3 ul li {
+    width: 350px;
+    height: 115px;
+    overflow: hidden;
+    float: left;
+    background-image: url(../img/service2-1.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #666666;
+    font-size: 18px;
+    line-height: 38px;
+    padding: 30px 0 0 35px;
+    margin: 0 0 0 -20px;
+}
+.service3 ul li:last-of-type {
+    width: 330px;
+    background-image: url(../img/service2-2.png);
+}
+.service3 ul li strong {
+    display: block;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: #009794;
+    overflow: hidden;
+    line-height: 35px;
+    color: #FFFFFF;
+    text-align: center;
+    float: left;
+    margin: 3px 17px 3px 0;
+}
+.service3 ul li:first-of-type {
+    margin: 0 0 0 40px;
+}
+@media only screen and (max-width: 1199px) {
+    .service3 ul {
+        width: 700px;
+        overflow: hidden;
+        margin: 0 auto;
+    }
+    .service3 ul li:nth-of-type(2n+1) {
+        margin: 0;
+    }
+}
+@media only screen and (max-width: 767px) {
+    .service3 h3 {
+        font-size: 24px;
+        margin: 30px 0 15px;
+    }
+    .service3 ul {
+        width: 350px;
+    }
+    .service3 ul li {
+        width: 100%;
+        margin: 0 !important;
+        background-position: left center !important;
+    }
+}
+@media only screen and (min-width: 1200px) {
+    .service3 ul li {
+        margin: 0 0 0 -77px;
+    }
+    .service3 ul li:first-of-type {
+        margin: 0;
+    }
+}
+@media only screen and (min-width: 1450px) {
+    .service3 ul li {
+        margin: 0 0 0 -20px;
+    }
+    .service3 ul li:first-of-type {
+        margin: 0 0 0 40px;
+    }
+}
+.service4 {
+    width: 100%;
+    overflow: hidden;
+    margin: 0 0 55px;
+}
+.service4 h3 {
+    font-size: 26px;
+    color: #333333;
+    font-family: "wigrumweb-bold";
+    text-align: center;
+    margin: 10px 0 20px;
+}
+.service4 p {
+    width: 605px;
+    line-height: 32px;
+    margin: 0 auto;
+    position: relative;
+    padding: 0 0 0 27px;
+    color: #666666;
+    font-size: 18px;
+}
+.service4 p:before {
+    content: '1';
+    display: block;
+    width: 20px;
+    height: 20px;
+    font-size: 16px;
+    border-radius: 50%;
+    border: 1px solid #666666;
+    text-align: center;
+    line-height: 17px;
+    position: absolute;
+    left: 0;
+    top: 7px;
+}
+.service4 p:nth-of-type(2):before {
+    content: '2';
+}
+.service4 p:nth-of-type(3):before {
+    content: '3';
+}
+@media only screen and (max-width: 991px) {
+    .service4 p {
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 767px) {
+    .service4 {
+        margin: 0 0 30px;
+    }
+    .service4 h3 {
+        font-size: 24px;
+        margin: 5px 0 15px;
+    }
+    .service4 p {
+        line-height: 20px;
+        padding: 0 0 0 25px;
+        font-size: 14px;
+        margin: 0 0 10px;
+    }
+    .service4 p:before {
+        width: 18px;
+        height: 18px;
+        font-size: 12px;
+        line-height: 16px;
+        top: 1px;
+    }
+}

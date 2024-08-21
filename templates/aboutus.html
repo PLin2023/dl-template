@@ -1,317 +1,354 @@
 <!DOCTYPE html>
 <html
-  xmlns:th="https://www.thymeleaf.org"
-  th:replace="~{layout :: html(head = ~{::head},content = ~{::content})}"
+        xmlns:th="https://www.thymeleaf.org"
+        th:replace="~{layout :: html(head = ~{::head},content = ~{::content})}"
 >
 <th:block th:fragment="head">
-  <link rel="stylesheet" type="text/css" th:href="@{/assets/css/factory.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/assets/css/factory.css}"/>
 </th:block>
 <th:block th:fragment="content">
-  <div class="banner">
-    <img src="/Dist/img/factory.jpg" />
-    <!--<div class="banner-txt">
-        <h1>Good products are created<br />by good people</h1>
-    </div>-->
-  </div>
-  <div class="factory1">
-    <div class="container">
-      <h1 class="factory-title wow fadeInUp">我们的<strong>企业</strong></h1>
-      <div class="factory1-list">
-        <a class="wow fadeInUp">
-          <ul class="list-img">
-            <li><img src="/Dist/img/factory1-1.png" /></li>
-          </ul>
-          <h4>成立于1983年</h4>
-          <p>公司现有员工200多人，<br />厂房使用面积57000平方米。</p>
-        </a>
-        <a class="wow fadeInUp">
-          <ul class="list-img">
-            <li><img src="/Dist/img/factory1-2.png" /></li>
-          </ul>
-          <h4>质量稳定</h4>
-          <p>确保产品质量安全稳定，产品通过TS、<br />PED、CE、API、ISO9001（2015）<br />和SIL功能安全认证。</p>
-        </a>
-        <a class="wow fadeInUp">
-          <ul class="list-img">
-            <li><img src="/Dist/img/factory1-3.png" /></li>
-          </ul>
-          <h4>智能设备</h4>
-          <p>现代化的高精度铸造设备，<br />加工检测设备。</p>
-        </a>
-        <a class="wow fadeInUp">
-          <ul class="list-img">
-            <li><img src="/Dist/img/factory1-4.png" /></li>
-          </ul>
-          <h4>服务经验</h4>
-          <p>30多年阀门开发、生产和服务经验</p>
-        </a>
-      </div>
+    <div class="banner">
+        <img th:src="@{/assets/img/factory.jpg}"/>
+        <!--<div class="banner-txt">
+            <h1>Good products are created<br />by good people</h1>
+        </div>-->
     </div>
-  </div>
-  <div class="factory2">
-    <div class="container">
-      <h1 class="factory-title wow fadeInUp">关于<strong>瓯明</strong></h1>
-      <div class="factory2-video wow fadeInUp">
-        <img id="factory2-img" onclick="factory()" src="/Dist/img/factory2.jpg" />
-        <video id="factory-video" controls="controls">
-          <source src="/Dist/video/batch.mp4" type="video/mp4"></source>
-        </video>
-      </div>
-      <ul class="factory2-txt">
-        <li class="wow fadeInUp">
-          <span>1</span>
-          <h4>公司简介</h4>
-          <p>
-            瓯明阀门集团有限公司始创于1983年，是一家集研发设计、生产、销售为一体的科技型国家高新技术企业。公司拥有厂房面积57000平方米，注册资金5000万元。现有员工200余人，工程技术人员30多人。</p>
-        </li>
-        <li class="wow fadeInUp">
-          <span>2</span>
-          <h4>荣誉资质</h4>
-          <p>瓯明主要从事于流体设备控制阀门的铸造、生产及销售。我们的产品已经通过了IS09001质量管理体系,IS014001环境管理体系,IS045001职业健康安全管理体系，TS特种设备制造许可证,AP1
-            607防火认证,CE,PED,欧盟REACh,RoHS认证，ATEX防爆认证,TA-LUFT微泄漏认证,IS0588-1微泄漏认证,EU-1935/2004欧盟食品接触材料以及SIL功能安全认证。公司于2014年被评为浙江省科技中小型企业,2018年获评“区级研发中心”“温州市安全文化建设示范企业”,2019年被评为国家高新技术企业。现公司拥有数项发明专利、多项实用新型专利,荣获“省级专精特新企业”</p>
-        </li>
-        <li class="wow fadeInUp">
-          <span>3</span>
-          <h4>应用领域</h4>
-          <p>
-            瓯明专业生产不锈钢铸件、球阀、闸截止、槽罐车配套系列、快速接头、不锈钢丝扣管件以及非标配件，广泛应用于石油、化工、化纤、化肥、电站、冶金、制药、饮料、船舶等行业。</p>
-        </li>
-        <li class="wow fadeInUp">
-          <span>4</span>
-          <h4>质量管理</h4>
-          <p>
-            瓯明使用OBLF光谱仪、拉伸测试机、冲击测试机、三坐标仪、盐雾测试机、阀门寿命测试仪、高低温测试箱、微泄漏测试仪、扭力测试仪等检测仪器来完成日常各项生产中的品控环节。</p>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div class="factory3">
-    <div class="container">
-      <div class="factory3-swiper">
-        <div class="swiper-container">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <a class="wow fadeInUp">
-                <div class="factory3-img">
-                  <img src="/upload/9398/202012/77db7a00315a4562a654a16df855b93b.jpg" alt=加工车间 title=加工车间 />
-                </div>
-                <h4>加工车间</h4>
-              </a>
+    <div class="factory1">
+        <div class="container">
+            <h1 class="factory-title wow fadeInUp">我们的<strong>企业</strong></h1>
+            <div class="factory1-list">
+                <a class="wow fadeInUp">
+                    <ul class="list-img">
+                        <li><img th:src="@{/assets/img/factory1-1.png}"/></li>
+                    </ul>
+                    <h4>成立于1983年</h4>
+                    <p>公司现有员工200多人，<br/>厂房使用面积57000平方米。</p>
+                </a>
+                <a class="wow fadeInUp">
+                    <ul class="list-img">
+                        <li><img th:src="@{/assets/img/factory1-2.png}"/></li>
+                    </ul>
+                    <h4>质量稳定</h4>
+                    <p>确保产品质量安全稳定，产品通过TS、<br/>PED、CE、API、ISO9001（2015）<br/>和SIL功能安全认证。</p>
+                </a>
+                <a class="wow fadeInUp">
+                    <ul class="list-img">
+                        <li><img th:src="@{/assets/img/factory1-3.png}"/></li>
+                    </ul>
+                    <h4>智能设备</h4>
+                    <p>现代化的高精度铸造设备，<br/>加工检测设备。</p>
+                </a>
+                <a class="wow fadeInUp">
+                    <ul class="list-img">
+                        <li><img th:src="@{/assets/img/factory1-4.png}"/></li>
+                    </ul>
+                    <h4>服务经验</h4>
+                    <p>30多年阀门开发、生产和服务经验</p>
+                </a>
             </div>
-            <div class="swiper-slide">
-              <a class="wow fadeInUp">
-                <div class="factory3-img">
-                  <img src="/upload/9398/202012/eea64d1652e04c1aadcc1735a9f3d162.jpg" alt=装配车间 title=装配车间 />
-                </div>
-                <h4>装配车间</h4>
-              </a>
-            </div>
-            <div class="swiper-slide">
-              <a class="wow fadeInUp">
-                <div class="factory3-img">
-                  <img src="/upload/9398/202012/df5fe7511cae43a7ba1c457190ab5211.jpg" alt=成品仓库 title=成品仓库 />
-                </div>
-                <h4>成品仓库</h4>
-              </a>
-            </div>
-            <div class="swiper-slide">
-              <a class="wow fadeInUp">
-                <div class="factory3-img">
-                  <img src="/upload/9398/202012/8286894aba484e29bf2787c41aa7a020.jpg" alt=配件仓库 title=配件仓库 />
-                </div>
-                <h4>配件仓库</h4>
-              </a>
-            </div>
-            <div class="swiper-slide">
-              <a class="wow fadeInUp">
-                <div class="factory3-img">
-                  <img src="/upload/9398/202012/fe2d7cac548f4ccb85d7bd51efbedf7d.jpg" alt=装配 title=装配 />
-                </div>
-                <h4>装配</h4>
-              </a>
-            </div>
-            <div class="swiper-slide">
-              <a class="wow fadeInUp">
-                <div class="factory3-img">
-                  <img src="/upload/9398/202012/4b159abd023f40d8a09f245e78765276.jpg" alt=压力试验 title=压力试验 />
-                </div>
-                <h4>压力试验</h4>
-              </a>
-            </div>
-            <div class="swiper-slide">
-              <a class="wow fadeInUp">
-                <div class="factory3-img">
-                  <img src="/upload/9398/202012/ab81c13eb84e44acb13047ddc7161298.jpg" alt=数控 title=数控 />
-                </div>
-                <h4>数控</h4>
-              </a>
-            </div>
-          </div>
         </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
-      </div>
     </div>
-  </div>
-  <div class="factory5">
-    <div class="container">
-      <h1 class="factory-title wow fadeInUp">荣誉<strong>资质</strong></h1>
-      <div class="factory5-left wow fadeInUp">
-        <div class="left-img">
-          <img src="/upload/9398/202012/7d369983cfd4410e826624203e3a83b6.jpg" alt=API607-150LB title=API607-150LB />
-        </div>
-        <span>API607-150LB</span>
-      </div>
-      <div class="factory5-right wow fadeInUp">
-        <div class="factory5-pc">
-          <h5>
-            企业获得的资质和荣誉，是对企业过去业绩的肯定，是对企业创造辉煌未来的鼓励和鞭策企业。到迈向新阶段，是我们不屈不挠、永不停歇的信念。</h5>
-          <div class="factory5-list wow fadeInUp">
-            <ul>
-              <li class="active">
-                <img src="/upload/9398/202012/7d369983cfd4410e826624203e3a83b6.jpg" alt=API607-150LB
-                     title=API607-150LB />
-              </li>
-              <li class="">
-                <img src="/upload/9398/202312/8df08bb0ec85491b842d3d996dfbefc9.jpg" alt=ISO9001 title=ISO9001 />
-              </li>
-              <li class="">
-                <img src="/upload/9398/202312/18e5ebd4768c4bd2b2eb885b74c6e5e0.jpg" alt=ISO14001 title=ISO14001 />
-              </li>
-              <li class="">
-                <img src="/upload/9398/202312/6220e1617a944f1a90baeec9ddf1f7df.jpg" alt=ISO45001 title=ISO45001 />
-              </li>
-              <li class="">
-                <img src="/upload/9398/202012/e5df6c36a6c3432abb612cccd5aec661.jpg" alt=API607-300LB
-                     title=API607-300LB />
-              </li>
-              <li class="">
-                <img src="/upload/9398/202012/9d3601a7bd424a18a5f952e40fac296a.jpg" alt=API607-600LB
-                     title=API607-600LB />
-              </li>
-              <li class="">
-                <img src="/upload/9398/202012/7ef4ef3ea43c4a6794c9c5701153a9d4.jpg" alt=ISO15848-1 title=ISO15848-1 />
-              </li>
-              <li class="">
-                <img src="/upload/9398/202012/7985d571d37f4d99829efbf5a8373021.jpg" alt=ISO15848-1 title=ISO15848-1 />
-              </li>
-              <li class="">
-                <img src="/upload/9398/202012/9fed1b66fe2c41b7919eca5869efded3.jpg" alt=ISO15848-1 title=ISO15848-1 />
-              </li>
-              <li class="">
-                <img src="/upload/9398/202012/28e72428f7b848ff8881e4e712ddac54.jpg" alt=ISO15848-1 title=ISO15848-1 />
-              </li>
-              <li class="">
-                <img src="/upload/9398/202012/bd11e05c066347438dcbae434f8cbc09.jpg" alt=ATEX title=ATEX />
-              </li>
-              <li class="">
-                <img src="/upload/9398/202012/c85e6e22537b4215854e33c7a94e6a94.jpg" alt=TA-LUFT title=TA-LUFT />
-              </li>
-              <li class="">
-                <img src="/upload/9398/202012/9ba975475b504542b0c13627bac2717f.jpg" alt=TA-LUFT title=TA-LUFT />
-              </li>
-              <li class="">
-                <img src="/upload/9398/202012/dec3796f3e9a4e20acb39d960ead9235.jpg" alt=TA-LUFT title=TA-LUFT />
-              </li>
-              <li class="">
-                <img src="/upload/9398/202012/0603b7d6611742fba1643eb7f84abe5e.jpg" alt=TA-LUFT title=TA-LUFT />
-              </li>
+    <div class="factory2">
+        <div class="container">
+            <h1 class="factory-title wow fadeInUp">关于<strong>瓯明</strong></h1>
+            <div class="factory2-video wow fadeInUp">
+                <img id="factory2-img" onclick="factory()" th:src="@{/assets/img/factory2.jpg}"/>
+                <video id="factory-video" controls="controls">
+                    <source th:src="@{/assets/video/batch.mp4}" type="video/mp4"></source>
+                </video>
+            </div>
+            <ul class="factory2-txt">
+                <li class="wow fadeInUp">
+                    <span>1</span>
+                    <h4>公司简介</h4>
+                    <p>
+                        瓯明阀门集团有限公司始创于1983年，是一家集研发设计、生产、销售为一体的科技型国家高新技术企业。公司拥有厂房面积57000平方米，注册资金5000万元。现有员工200余人，工程技术人员30多人。</p>
+                </li>
+                <li class="wow fadeInUp">
+                    <span>2</span>
+                    <h4>荣誉资质</h4>
+                    <p>
+                        瓯明主要从事于流体设备控制阀门的铸造、生产及销售。我们的产品已经通过了IS09001质量管理体系,IS014001环境管理体系,IS045001职业健康安全管理体系，TS特种设备制造许可证,AP1
+                        607防火认证,CE,PED,欧盟REACh,RoHS认证，ATEX防爆认证,TA-LUFT微泄漏认证,IS0588-1微泄漏认证,EU-1935/2004欧盟食品接触材料以及SIL功能安全认证。公司于2014年被评为浙江省科技中小型企业,2018年获评"区级研发中心""温州市安全文化建设示范企业",2019年被评为国家高新技术企业。现公司拥有数项发明专利、多项实用新型专利,荣获"省级专精特新企业"</p>
+                </li>
+                <li class="wow fadeInUp">
+                    <span>3</span>
+                    <h4>应用领域</h4>
+                    <p>
+                        瓯明专业生产不锈钢铸件、球阀、闸截止、槽罐车配套系列、快速接头、不锈钢丝扣管件以及非标配件，广泛应用于石油、化工、化纤、化肥、电站、冶金、制药、饮料、船舶等行业。</p>
+                </li>
+                <li class="wow fadeInUp">
+                    <span>4</span>
+                    <h4>质量管理</h4>
+                    <p>
+                        瓯明使用OBLF光谱仪、拉伸测试机、冲击测试机、三坐标仪、盐雾测试机、阀门寿命测试仪、高低温测试箱、微泄漏测试仪、扭力测试仪等检测仪器来完成日常各项生产中的品控环节。</p>
+                </li>
             </ul>
-          </div>
         </div>
-        <div class="factory5-sm">
-          <div class="factory5-swiper">
-            <div class="swiper-container">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <a class="active">
-                    <img src="/upload/9398/202012/7d369983cfd4410e826624203e3a83b6.jpg" alt=API607-150LB
-                         title=API607-150LB />
-                  </a>
-                </div>
-                <div class="swiper-slide">
-                  <a class="">
-                    <img src="/upload/9398/202312/8df08bb0ec85491b842d3d996dfbefc9.jpg" alt=ISO9001 title=ISO9001 />
-                  </a>
-                </div>
-                <div class="swiper-slide">
-                  <a class="">
-                    <img src="/upload/9398/202312/18e5ebd4768c4bd2b2eb885b74c6e5e0.jpg" alt=ISO14001 title=ISO14001 />
-                  </a>
-                </div>
-                <div class="swiper-slide">
-                  <a class="">
-                    <img src="/upload/9398/202312/6220e1617a944f1a90baeec9ddf1f7df.jpg" alt=ISO45001 title=ISO45001 />
-                  </a>
-                </div>
-                <div class="swiper-slide">
-                  <a class="">
-                    <img src="/upload/9398/202012/e5df6c36a6c3432abb612cccd5aec661.jpg" alt=API607-300LB
-                         title=API607-300LB />
-                  </a>
-                </div>
-                <div class="swiper-slide">
-                  <a class="">
-                    <img src="/upload/9398/202012/9d3601a7bd424a18a5f952e40fac296a.jpg" alt=API607-600LB
-                         title=API607-600LB />
-                  </a>
-                </div>
-                <div class="swiper-slide">
-                  <a class="">
-                    <img src="/upload/9398/202012/7ef4ef3ea43c4a6794c9c5701153a9d4.jpg" alt=ISO15848-1
-                         title=ISO15848-1 />
-                  </a>
-                </div>
-                <div class="swiper-slide">
-                  <a class="">
-                    <img src="/upload/9398/202012/7985d571d37f4d99829efbf5a8373021.jpg" alt=ISO15848-1
-                         title=ISO15848-1 />
-                  </a>
-                </div>
-                <div class="swiper-slide">
-                  <a class="">
-                    <img src="/upload/9398/202012/9fed1b66fe2c41b7919eca5869efded3.jpg" alt=ISO15848-1
-                         title=ISO15848-1 />
-                  </a>
-                </div>
-                <div class="swiper-slide">
-                  <a class="">
-                    <img src="/upload/9398/202012/28e72428f7b848ff8881e4e712ddac54.jpg" alt=ISO15848-1
-                         title=ISO15848-1 />
-                  </a>
-                </div>
-                <div class="swiper-slide">
-                  <a class="">
-                    <img src="/upload/9398/202012/bd11e05c066347438dcbae434f8cbc09.jpg" alt=ATEX title=ATEX />
-                  </a>
-                </div>
-                <div class="swiper-slide">
-                  <a class="">
-                    <img src="/upload/9398/202012/c85e6e22537b4215854e33c7a94e6a94.jpg" alt=TA-LUFT title=TA-LUFT />
-                  </a>
-                </div>
-                <div class="swiper-slide">
-                  <a class="">
-                    <img src="/upload/9398/202012/9ba975475b504542b0c13627bac2717f.jpg" alt=TA-LUFT title=TA-LUFT />
-                  </a>
-                </div>
-                <div class="swiper-slide">
-                  <a class="">
-                    <img src="/upload/9398/202012/dec3796f3e9a4e20acb39d960ead9235.jpg" alt=TA-LUFT title=TA-LUFT />
-                  </a>
-                </div>
-                <div class="swiper-slide">
-                  <a class="">
-                    <img src="/upload/9398/202012/0603b7d6611742fba1643eb7f84abe5e.jpg" alt=TA-LUFT title=TA-LUFT />
-                  </a>
-                </div>
-              </div>
-              <div class="swiper-scrollbar"></div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
+    <div class="factory3">
+        <div class="container">
+            <div class="factory3-swiper">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <a class="wow fadeInUp">
+                                <div class="factory3-img">
+                                    <img th:src="@{/assets/202012/77db7a00315a4562a654a16df855b93b.jpg}" alt=加工车间
+                                         title=加工车间/>
+                                </div>
+                                <h4>加工车间</h4>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a class="wow fadeInUp">
+                                <div class="factory3-img">
+                                    <img th:src="@{/assets/202012/eea64d1652e04c1aadcc1735a9f3d162.jpg}" alt=装配车间
+                                         title=装配车间/>
+                                </div>
+                                <h4>装配车间</h4>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a class="wow fadeInUp">
+                                <div class="factory3-img">
+                                    <img th:src="@{/assets/202012/df5fe7511cae43a7ba1c457190ab5211.jpg}" alt=成品仓库
+                                         title=成品仓库/>
+                                </div>
+                                <h4>成品仓库</h4>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a class="wow fadeInUp">
+                                <div class="factory3-img">
+                                    <img th:src="@{/assets/202012/8286894aba484e29bf2787c41aa7a020.jpg}" alt=配件仓库
+                                         title=配件仓库/>
+                                </div>
+                                <h4>配件仓库</h4>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a class="wow fadeInUp">
+                                <div class="factory3-img">
+                                    <img th:src="@{/assets/202012/fe2d7cac548f4ccb85d7bd51efbedf7d.jpg}" alt=装配
+                                         title=装配/>
+                                </div>
+                                <h4>装配</h4>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a class="wow fadeInUp">
+                                <div class="factory3-img">
+                                    <img th:src="@{/assets/202012/4b159abd023f40d8a09f245e78765276.jpg}" alt=压力试验
+                                         title=压力试验/>
+                                </div>
+                                <h4>压力试验</h4>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a class="wow fadeInUp">
+                                <div class="factory3-img">
+                                    <img th:src="@{/assets/202012/ab81c13eb84e44acb13047ddc7161298.jpg}" alt=数控
+                                         title=数控/>
+                                </div>
+                                <h4>数控</h4>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+    </div>
+    <div class="factory5">
+        <div class="container">
+            <h1 class="factory-title wow fadeInUp">荣誉<strong>资质</strong></h1>
+            <div class="factory5-left wow fadeInUp">
+                <div class="left-img">
+                    <img th:src="@{/assets/202012/7d369983cfd4410e826624203e3a83b6.jpg}" alt=API607-150LB
+                         title=API607-150LB/>
+                </div>
+                <span>API607-150LB</span>
+            </div>
+            <div class="factory5-right wow fadeInUp">
+                <div class="factory5-pc">
+                    <h5>
+                        企业获得的资质和荣誉，是对企业过去业绩的肯定，是对企业创造辉煌未来的鼓励和鞭策企业。到迈向新阶段，是我们不屈不挠、永不停歇的信念。</h5>
+                    <div class="factory5-list wow fadeInUp">
+                        <ul>
+                            <li class="active">
+                                <img th:src="@{/assets/202012/7d369983cfd4410e826624203e3a83b6.jpg}" alt=API607-150LB
+                                     title=API607-150LB/>
+                            </li>
+                            <li class="">
+                                <img th:src="@{/assets/202312/8df08bb0ec85491b842d3d996dfbefc9.jpg}" alt=ISO9001
+                                     title=ISO9001/>
+                            </li>
+                            <li class="">
+                                <img th:src="@{/assets/202312/18e5ebd4768c4bd2b2eb885b74c6e5e0.jpg}" alt=ISO14001
+                                     title=ISO14001/>
+                            </li>
+                            <li class="">
+                                <img th:src="@{/assets/202312/6220e1617a944f1a90baeec9ddf1f7df.jpg}" alt=ISO45001
+                                     title=ISO45001/>
+                            </li>
+                            <li class="">
+                                <img th:src="@{/assets/202012/e5df6c36a6c3432abb612cccd5aec661.jpg}" alt=API607-300LB
+                                     title=API607-300LB/>
+                            </li>
+                            <li class="">
+                                <img th:src="@{/assets/202012/9d3601a7bd424a18a5f952e40fac296a.jpg}" alt=API607-600LB
+                                     title=API607-600LB/>
+                            </li>
+                            <li class="">
+                                <img th:src="@{/assets/202012/7ef4ef3ea43c4a6794c9c5701153a9d4.jpg}" alt=ISO15848-1
+                                     title=ISO15848-1/>
+                            </li>
+                            <li class="">
+                                <img th:src="@{/assets/202012/7985d571d37f4d99829efbf5a8373021.jpg}" alt=ISO15848-1
+                                     title=ISO15848-1/>
+                            </li>
+                            <li class="">
+                                <img th:src="@{/assets/202012/9fed1b66fe2c41b7919eca5869efded3.jpg}" alt=ISO15848-1
+                                     title=ISO15848-1/>
+                            </li>
+                            <li class="">
+                                <img th:src="@{/assets/202012/28e72428f7b848ff8881e4e712ddac54.jpg}" alt=ISO15848-1
+                                     title=ISO15848-1/>
+                            </li>
+                            <li class="">
+                                <img th:src="@{/assets/202012/bd11e05c066347438dcbae434f8cbc09.jpg}" alt=ATEX
+                                     title=ATEX/>
+                            </li>
+                            <li class="">
+                                <img th:src="@{/assets/202012/c85e6e22537b4215854e33c7a94e6a94.jpg}" alt=TA-LUFT
+                                     title=TA-LUFT/>
+                            </li>
+                            <li class="">
+                                <img th:src="@{/assets/202012/9ba975475b504542b0c13627bac2717f.jpg}" alt=TA-LUFT
+                                     title=TA-LUFT/>
+                            </li>
+                            <li class="">
+                                <img th:src="@{/assets/202012/dec3796f3e9a4e20acb39d960ead9235.jpg}" alt=TA-LUFT
+                                     title=TA-LUFT/>
+                            </li>
+                            <li class="">
+                                <img th:src="@{/assets/202012/0603b7d6611742fba1643eb7f84abe5e.jpg}" alt=TA-LUFT
+                                     title=TA-LUFT/>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="factory5-sm">
+                    <div class="factory5-swiper">
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <a class="active">
+                                        <img th:src="@{/assets/202012/7d369983cfd4410e826624203e3a83b6.jpg}"
+                                             alt=API607-150LB title=API607-150LB/>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a class="">
+                                        <img th:src="@{/assets/202312/8df08bb0ec85491b842d3d996dfbefc9.jpg}" alt=ISO9001
+                                             title=ISO9001/>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a class="">
+                                        <img th:src="@{/assets/202312/18e5ebd4768c4bd2b2eb885b74c6e5e0.jpg}"
+                                             alt=ISO14001 title=ISO14001/>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a class="">
+                                        <img th:src="@{/assets/202312/6220e1617a944f1a90baeec9ddf1f7df.jpg}"
+                                             alt=ISO45001 title=ISO45001/>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a class="">
+                                        <img th:src="@{/assets/202012/e5df6c36a6c3432abb612cccd5aec661.jpg}"
+                                             alt=API607-300LB title=API607-300LB/>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a class="">
+                                        <img th:src="@{/assets/202012/9d3601a7bd424a18a5f952e40fac296a.jpg}"
+                                             alt=API607-600LB title=API607-600LB/>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a class="">
+                                        <img th:src="@{/assets/202012/7ef4ef3ea43c4a6794c9c5701153a9d4.jpg}"
+                                             alt=ISO15848-1 title=ISO15848-1/>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a class="">
+                                        <img th:src="@{/assets/202012/7985d571d37f4d99829efbf5a8373021.jpg}"
+                                             alt=ISO15848-1 title=ISO15848-1/>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a class="">
+                                        <img th:src="@{/assets/202012/9fed1b66fe2c41b7919eca5869efded3.jpg}"
+                                             alt=ISO15848-1 title=ISO15848-1/>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a class="">
+                                        <img th:src="@{/assets/202012/28e72428f7b848ff8881e4e712ddac54.jpg}"
+                                             alt=ISO15848-1 title=ISO15848-1/>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a class="">
+                                        <img th:src="@{/assets/202012/bd11e05c066347438dcbae434f8cbc09.jpg}" alt=ATEX
+                                             title=ATEX/>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a class="">
+                                        <img th:src="@{/assets/202012/c85e6e22537b4215854e33c7a94e6a94.jpg}" alt=TA-LUFT
+                                             title=TA-LUFT/>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a class="">
+                                        <img th:src="@{/assets/202012/9ba975475b504542b0c13627bac2717f.jpg}" alt=TA-LUFT
+                                             title=TA-LUFT/>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a class="">
+                                        <img th:src="@{/assets/202012/dec3796f3e9a4e20acb39d960ead9235.jpg}" alt=TA-LUFT
+                                             title=TA-LUFT/>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a class="">
+                                        <img th:src="@{/assets/202012/0603b7d6611742fba1643eb7f84abe5e.jpg}" alt=TA-LUFT
+                                             title=TA-LUFT/>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-scrollbar"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var imgs = document.getElementById('factory2-img');
+        var video = document.getElementById('factory-video');
+        function factory(){
+            imgs.style.display = "none";
+            video.play();
+        };
+    </script>
 </th:block>
 </html>

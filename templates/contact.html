@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html
+        xmlns:th="https://www.thymeleaf.org"
+        th:replace="~{layout :: html(head = ~{::head},content = ~{::content})}"
+>
+<th:block th:fragment="head">
+    <link rel="stylesheet" type="text/css" th:href="@{/assets/css/contact.css}"/>
+</th:block>
+<th:block th:fragment="content">
+    <div class="banner">
+        <img th:src="@{/assets/img/contact.jpg}" />
+        <div class="banner-txt">
+            <h2>营销网络包括许多国家和地区<br/>广受客户好评</h2>
+        </div>
+    </div>
+    <div class="contact1">
+        <div class="container">
+            <h1><strong>联系我们</strong></h1>
+            <ul>
+                <li>
+                    <h2>铸造基地</h2>
+                    <div class="contact-box">
+                        <p><span>地址:</span><em>浙江省温州市龙湾区空港新区金海一道896号</em></p>
+                        <p><span>电话:</span><em>0577-8687 8788</em></p>
+                        <p><span>传真:</span><em>0577-8637 1713</em></p>
+                        <p><span>邮箱:</span><em>ouming@ouming.com</em></p>
+                    </div>
+                </li>
+                <li>
+                    <h2>公司总部</h2>
+                    <div class="contact-box">
+                        <p><span>地址:</span><em>浙江省温州市龙湾区永中街道天中路1555号</em></p>
+                        <p><span>电话:</span><em>0577-8687 8788</em></p>
+                        <p><span>传真:</span><em>0577-8637 1713</em></p>
+                        <p><span>邮箱:</span><em>ouming@ouming.com</em></p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="contact2">
+        <div class="container">
+            <div class="contact2-title">
+                <h1><strong>在线留言</strong></h1>
+                <p>请就我们的产品和服务与我们联系。</p>
+            </div>
+            <div class="contact-form">
+                <ul class="from-input">
+                    <li>
+                        <span>姓名 :</span>
+                        <input type="text" id="txtName2" name="txtName" value="" />
+                    </li>
+                    <li>
+                        <span>电话 :</span>
+                        <input type="tel" id="txtPhone2" name="txtPhone" value="" />
+                    </li>
+                    <li>
+                        <span>邮箱 :</span>
+                        <input type="email" id="txtEmail2" name="txtEmail" value="" />
+                    </li>
+                    <li></li>
+                </ul>
+                <div class="from-textarea">
+                    <span>内容 :</span>
+                    <textarea name="txtContent" id="txtContent2" rows="" cols=""></textarea>
+                </div>
+                <button id="SendMess2">提 交</button>
+            </div>
+        </div>
+    </div>
+    <div class="contact-map" id="dituContent"></div>
+
+    <script type="text/javascript" src="//api.map.baidu.com/api?v=2.0&ak=Ct103OexwkTdKmhHqWeGFABU4fAISyr6"></script>
+    <script type="text/javascript">
+        $(function(){
+
+            //创建和初始化地图函数：
+            function initMap() {
+                createMap(); //创建地图
+                setMapEvent(); //设置地图事件
+                addMapControl(); //向地图添加控件
+                addMarker(); //向地图中添加marker
+            }
+
+            //创建地图函数：113.312704,34.782877
+            function createMap() {
+                var map = new BMap.Map("dituContent"); //在百度地图容器中创建一个地图
+                var point = new BMap.Point(120.812429, 27.902435); //定义一个中心点坐标
+                map.centerAndZoom(point, 19); //设定地图的中心点和坐标并将地图显示在地图容器中
+                window.map = map; //将map变量存储在全局
+            }
+
+            //地图事件设置函数：
+            function setMapEvent() {
+                map.enableDragging(); //启用地图拖拽事件，默认启用(可不写)
+                map.disableScrollWheelZoom(); //禁用地图滚轮放大缩小，默认禁用(可不写)
+                map.enableDoubleClickZoom(); //启用鼠标双击放大，默认启用(可不写)
+                map.enableKeyboard(); //启用键盘上下左右键移动地图
+            }
+
+            //地图控件添加函数：
+            function addMapControl() {
+                //向地图中添加缩放控件
+                var ctrl_nav = new BMap.NavigationControl({ anchor: BMAP_ANCHOR_TOP_LEFT, type: BMAP_NAVIGATION_CONTROL_LARGE });
+                map.addControl(ctrl_nav);
+                //向地图中添加比例尺控件
+                var ctrl_sca = new BMap.ScaleControl({ anchor: BMAP_ANCHOR_BOTTOM_LEFT });
+                map.addControl(ctrl_sca);
+            }
+
+            //标注点数组
+            var markerArr = [{ title: "浙江瓯明流体铸业有限公司<br />", content: "地址：浙江省温州市龙湾区永中街道天中路1555号<br />电话： 0577-8687 8788", point: "120.812429|27.902435", isOpen: 1, icon: { w: 23, h: 25, l: 46, t: 21, x: 9, lb: 12 } }
+            ];
+            //创建marker  120.837158,27.875314
+            function addMarker() {
+                for (var i = 0; i < markerArr.length; i++) {
+                    var json = markerArr[i];
+                    var p0 = json.point.split("|")[0];
+                    var p1 = json.point.split("|")[1];
+                    var point = new BMap.Point(p0, p1);
+                    var iconImg = createIcon(json.icon);
+                    var marker = new BMap.Marker(point, { icon: iconImg });
+                    var iw = createInfoWindow(i);
+                    var label = new BMap.Label(json.title, { "offset": new BMap.Size(json.icon.lb - json.icon.x + 10, -20) });
+                    marker.setLabel(label);
+                    map.addOverlay(marker);
+                    label.setStyle({
+                        borderColor: "#808080",
+                        color: "#333",
+                        cursor: "pointer"
+                    });
+
+                    (function () {
+                        var index = i;
+                        var _iw = createInfoWindow(i);
+                        var _marker = marker;
+                        _marker.addEventListener("click", function () {
+                            this.openInfoWindow(_iw);
+                        });
+                        _iw.addEventListener("open", function () {
+                            _marker.getLabel().hide();
+                        })
+                        _iw.addEventListener("close", function () {
+                            _marker.getLabel().show();
+                        })
+                        label.addEventListener("click", function () {
+                            _marker.openInfoWindow(_iw);
+                        })
+                        if (!!json.isOpen) {
+                            label.hide();
+                            _marker.openInfoWindow(_iw);
+                        }
+                    })()
+                }
+            }
+            //创建InfoWindow
+            function createInfoWindow(i) {
+                var json = markerArr[i];
+                var iw = new BMap.InfoWindow("<b class='iw_poi_title' title='" + json.title + "'>" + json.title + "</b><div class='iw_poi_content'>" + json.content + "</div>");
+                return iw;
+            }
+            //创建一个Icon
+            function createIcon(json) {
+                var icon = new BMap.Icon("http://app.baidu.com/map/images/us_mk_icon.png", new BMap.Size(json.w, json.h), { imageOffset: new BMap.Size(-json.l, -json.t), infoWindowOffset: new BMap.Size(json.lb + 5, 1), offset: new BMap.Size(json.x, json.h) })
+                return icon;
+            }
+
+            initMap(); //创建和初始化地图
+        })
+
+
+
+    </script>
+
+</th:block>
+</html>

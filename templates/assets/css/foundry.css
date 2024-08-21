@@ -1,0 +1,429 @@
+.foundry-title {
+    width: 320px;
+    line-height: 50px;
+    margin: 65px auto 40px;
+    color: #333333;
+    text-align: center;
+    font-size: 42px;
+    position: relative;
+}
+.foundry-title:before {
+    content: '';
+    display: block;
+    width: 28px;
+    height: 2px;
+    background-color: #09a9ab;
+    position: absolute;
+    left: -28px;
+    top: 24px;
+}
+.foundry-title:after {
+    content: '';
+    display: block;
+    width: 28px;
+    height: 2px;
+    background-color: #09a9ab;
+    position: absolute;
+    right: -28px;
+    top: 24px;
+}
+@media only screen and (max-width: 767px) {
+    .foundry-title {
+        width: 210px;
+        line-height: 35px;
+        margin: 35px auto 25px;
+        font-size: 28px;
+    }
+    .foundry-title:before,.foundry-title:after {
+        height: 1px;
+        top: 17px;
+    }
+}
+/*Our Foundry*/
+.foundry1 {
+    width: 100%;
+    overflow: hidden;
+}
+.foundry1 .foundry1-img {
+    width: 650px;
+    overflow: hidden;
+    float: left;
+}
+.foundry1 .foundry1-img img {
+    width: 100%;
+}
+.foundry1 .foundry1-txt {
+    width: calc(100% - 650px);
+    width: -moz-calc(100% - 650px);
+    width: -webkit-calc(100% - 650px);
+    overflow: hidden;
+    float: left;
+    padding: 50px 0 0 30px;
+    line-height: 24px;
+    font-size: 16px;
+    color: #646363;
+}
+.foundry1 .foundry1-txt p {
+    margin: 0 0 10px;
+}
+@media only screen and (max-width: 1199px) {
+    .foundry1 .foundry1-img {
+        float: none;
+        margin: 0 auto 30px;
+    }
+    .foundry1 .foundry1-txt {
+        width: 100%;
+        padding: 0;
+    }
+}
+@media only screen and (max-width: 991px) {
+    .foundry1 .foundry1-img {
+        width: 100%;
+        float: none;
+    }
+}
+@media only screen and (max-width: 767px) {
+    .foundry1 .foundry1-img {
+        margin: 0 0 20px;
+    }
+    .foundry1 .foundry1-txt {
+        line-height: 25px;
+        font-size: 14px;
+    }
+}
+@media only screen and (min-width: 1200px) {
+    .foundry1 .foundry1-txt {
+        line-height: 25px;
+        font-size: 14px;
+    }
+}
+@media only screen and (min-width: 1450px) {
+    .foundry1 .foundry1-txt {
+        line-height: 30px;
+        font-size: 16px;
+    }
+}
+.foundry2 {
+    width: 100%;
+    overflow: hidden;
+    padding: 50px 0 0;
+}
+.foundry2 .foundry2-swiper {
+    width: 100%;
+    height: 260px;
+    position: relative;
+}
+.foundry2 .foundry2-swiper a {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+    cursor: pointer;
+}
+.foundry2 .foundry2-swiper a .foundry2-img {
+    width: 100%;
+    overflow: hidden;
+}
+.foundry2 .foundry2-swiper a .foundry2-img img {
+    width: 100%;
+    transition: all 0.5s;
+}
+.foundry2 .foundry2-swiper a h4 {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    font-size: 18px;
+    color: #666666;
+    background-color: #f3f8fc;
+    overflow: hidden;
+}
+.foundry2 .foundry2-swiper a:hover .foundry2-img img {
+    transform: scale(1.1);
+}
+.foundry2 .foundry2-swiper a:hover h4 {
+    color: #FFFFFF;
+    background-color: #009894;
+}
+@media only screen and (max-width: 767px ) {
+    .foundry2 {
+        padding: 35px 0 0;
+    }
+    .foundry2 .foundry2-swiper {
+        height: auto;
+    }
+    .foundry2 .foundry2-swiper a h4 {
+        height: 30px;
+        line-height: 30px;
+        font-size: 12px;
+    }
+}
+@media only screen and (min-width: 1200px) {
+    .foundry2 .foundry2-swiper {
+        height: 225px;
+    }
+}
+@media only screen and (min-width: 1450px) {
+    .foundry2 .foundry2-swiper {
+        height: 260px;
+    }
+}
+/*Certificate*/
+.foundry3 {
+    width: 100%;
+    overflow: hidden;
+    padding: 0 0 50px;
+}
+.foundry3 .foundry-title {
+    width: 250px;
+    margin: 50px auto 40px;
+}
+.foundry3 .foundry3-left {
+    width: 630px;
+    height: 665px;
+    overflow: hidden;
+    float: left;
+    background: url(../img/factory5Bg.jpg) no-repeat center;
+    padding: 60px 60px 0;
+    text-align: center;
+}
+.foundry3 .foundry3-left .left-img {
+    width: 100%;
+    overflow: hidden;
+}
+.foundry3 .foundry3-left img {
+    width: 100%;
+    display: block;
+    height: 480px;
+    -o-object-fit: contain;
+    object-fit: contain;
+}
+.foundry3 .foundry3-left span {
+    display: inline-block;
+    min-width: 135px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    color: #000000;
+    border-radius: 15px;
+    overflow: hidden;
+    background-color: #dedede;
+    margin: 20px 0 0;
+}
+.foundry3 .foundry3-right {
+    width: calc(100% - 630px);
+    width: -moz-calc(100% - 630px);
+    width: -webkit-calc(100% - 630px);
+    height: 665px;
+    overflow: hidden;
+    float: right;
+    background-color: #f3f8fc;
+    padding: 60px 60px 0 70px;
+}
+.foundry3 .foundry3-right h5 {
+    width: 550px;
+    max-width: 100%;
+    font-size: 18px;
+    color: #333333;
+    line-height: 30px;
+}
+.foundry3 .foundry3-right .foundry3-list {
+    width: 100%;
+    height: 410px;
+    overflow: hidden;
+    margin: 30px 0 0;
+}
+.foundry3 .foundry3-right .foundry3-list ul {
+    width: 595px;
+    max-width: 90%;
+    min-height: 650px;
+    overflow: hidden;
+}
+.foundry3 .foundry3-right .foundry3-list ul li {
+    width: calc(33.33% - 12px);
+    width: -moz-calc(33.33% - 12px);
+    width: -webkit-calc(33.33% - 12px);
+    height: 125px;
+    overflow: hidden;
+    padding: 10px 25px;
+    background-color: #FFFFFF;
+    border: 2px solid #FFFFFF;
+    float: left;
+    cursor: pointer;
+}
+.foundry3 .foundry3-right .foundry3-list ul li:nth-of-type(3n+1),.foundry3 .foundry3-right .foundry3-list ul li:nth-of-type(3n+2) {
+    margin: 0 18px 18px 0;
+}
+.foundry3 .foundry3-right .foundry3-list ul li:nth-of-type(3n) {
+    margin: 0 0 18px;
+}
+.foundry3 .foundry3-right .foundry3-list ul li img {
+    width: 100%;
+    display: block;
+    height: 101px;
+    -o-object-fit: contain;
+    object-fit: contain;
+    transition: all 0.5s;
+}
+.foundry3 .foundry3-right .foundry3-list ul li.active {
+    border-color: #09a9ab;
+}
+.foundry3 .foundry3-right .foundry3-list ul li:hover {
+    border-color: #09a9ab;
+    background-color: #09a9ab;
+}
+.zUIpanelScrollBox {
+    width: 1px;
+    height: 100%;
+    top: 0px;
+    right: 4px;
+    background-color: #09a9ab;
+    border: none;
+    position: absolute !important;
+    overflow: hidden;
+}
+.zUIpanelScrollBar {
+    display: block !important;
+    position: absolute !important;
+    width: 9px;
+    height: 85px;
+    top: 0px;
+    right: 0px !important;
+    left: auto !important;
+    z-index: 110;
+    background-color: #09a9ab;
+}
+@media only screen and (max-width: 1199px) {
+    .foundry3 .foundry3-left {
+        width: 65%;
+        float: none;
+        margin: 0 auto;
+    }
+    .foundry3 .foundry3-right {
+        width: 65%;
+        height: auto;
+        float: none;
+        margin: 0 auto;
+        padding: 40px;
+    }
+    .foundry3 .foundry3-right .foundry3-pc {
+        display: none;
+    }
+    .foundry3 .foundry3-right .foundry3-swiper {
+        width: 100%;
+    }
+    .foundry3 .foundry3-right .foundry3-swiper .swiper-container {
+        padding: 0 0 30px;
+    }
+    .foundry3 .foundry3-right .foundry3-swiper a {
+        display: block;
+        width: 100%;
+        height: 125px;
+        overflow: hidden;
+        padding: 10px;
+        background-color: #FFFFFF;
+        border: 2px solid #FFFFFF;
+    }
+    .foundry3 .foundry3-right .foundry3-swiper a.active {
+        border-color: #09a9ab;
+    }
+    .foundry3 .foundry3-right .foundry3-swiper a img {
+        width: 100%;
+        display: block;
+        height: 101px;
+        -o-object-fit: contain;
+        object-fit: contain;
+        transition: all 0.5s;
+    }
+    .foundry3-swiper .swiper-container-horizontal>.swiper-scrollbar {
+        width: 99%;
+    }
+    .foundry3-swiper .swiper-scrollbar-drag {
+        background-color: #09a9ab;
+    }
+}
+@media only screen and (max-width: 991px ) {
+    .foundry3 .foundry3-left {
+        width: 100%;
+        float: none;
+        background-size: 100%;
+    }
+    .foundry3 .foundry3-right {
+        width: 100%;
+        float: none;
+    }
+}
+@media only screen and (max-width: 767px ) {
+    .foundry3 .foundry-title {
+        width: 150px;
+        margin: 35px auto 30px;
+    }
+    .foundry3 .foundry3-left {
+        height: 370px;
+        padding: 30px 30px 0;
+        background-size: 100% 100%;
+    }
+    .foundry3 .foundry3-left img {
+        height: 260px;
+    }
+    .foundry3 .foundry3-left span {
+        margin: 10px 0 0;
+    }
+    .foundry3 .foundry3-right {
+        height: auto;
+        padding: 30px 20px;
+    }
+    .foundry3 .foundry3-right h5 {
+        width: 100%;
+        line-height: 25px;
+        font-size: 16px;
+    }
+    .foundry3 .foundry3-right .foundry3-list {
+        margin: 25px 0 0;
+    }
+    .foundry3 .foundry3-right .foundry3-list ul {
+        max-width: 95%;
+    }
+    .foundry3 .foundry3-right .foundry3-list ul li {
+        width: calc(50% - 7px);
+        width: -moz-calc(50% - 7px);
+        width: -webkit-calc(50% - 7px);
+        padding: 10px 15px;
+    }
+    .foundry3 .foundry3-right .foundry3-list ul li:nth-of-type(2n+1){
+        margin: 0 14px 14px 0;
+    }
+    .foundry3 .foundry3-right .foundry3-list ul li:nth-of-type(2n){
+        margin: 0 0 14px;
+    }
+}
+@media only screen and (min-width: 1200px) {
+    .foundry3 .foundry3-left {
+        width: 535px;
+        float: left;
+    }
+    .foundry3 .foundry3-right {
+        width: calc(100% - 535px);
+        width: -moz-calc(100% - 535px);
+        width: -webkit-calc(100% - 535px);
+        float: left;
+    }
+    .foundry3 .foundry3-right .foundry3-sm {
+        display: none;
+    }
+    .foundry3 .foundry3-right .foundry3-list ul li {
+        padding: 10px;
+    }
+}
+@media only screen and (min-width: 1450px) {
+    .foundry3 .foundry3-left {
+        width: 630px;
+    }
+    .foundry3 .foundry3-right {
+        width: calc(100% - 630px);
+        width: -moz-calc(100% - 630px);
+        width: -webkit-calc(100% - 630px);
+    }
+    .foundry3 .foundry3-right .foundry3-list ul li {
+        padding: 10px 25px;
+    }
+}
