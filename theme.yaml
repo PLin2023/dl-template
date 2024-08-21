@@ -1,9 +1,9 @@
 apiVersion: theme.halo.run/v1alpha1
 kind: Theme
 metadata:
-  name: dongnan-v1
+  name: dl-template
 spec:
-  displayName: Theme Starter
+  displayName: dl-template
   author:
     name: Halo
     website: "https://github.com/halo-dev"
@@ -19,3 +19,13 @@ spec:
   license:
     - name: "GPL-3.0"
       url: "https://github.com/halo-dev/plugin-starter/blob/main/LICENSE"
+  customTemplates:
+    page:
+      - name: 关于我们
+        description: 关于我们页面
+        screenshot:
+        file: aboutus.html
+      - name: 工厂介绍
+        description: 工厂介绍页面
+        screenshot:
+        file: factory.html
