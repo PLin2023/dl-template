@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html
+        xmlns:th="https://www.thymeleaf.org"
+        th:replace="~{layout :: html(head = ~{::head},content = ~{::content})}"
+>
+<th:block th:fragment="head">
+    <link rel="stylesheet" type="text/css" th:href="@{/assets/css/product.css}"/>
+</th:block>
+<th:block th:fragment="content">
+
+    <div class="banner">
+        <img th:src="@{/assets/img/Product.jpg}" />
+        <div class="banner-txt">
+            <h1>耐用、可靠、熟练</h1>
+        </div>
+    </div>
+    <div class="product-content">
+        <div class="container">
+            <div class="product-left">
+                <h3>产品系列</h3>
+                <ul class="product-menu">
+                    <li th:each="category : ${categories}" th:class="${currentCategory.metadata.name} == ${category.metadata.name} ? 'active' : ''">
+                        <h4>
+                            <a th:href="@{/productlist/{slug}(slug=${category.metadata.name})}" th:text="${category.spec.name}"></a>
+                        </h4>
+                    </li>
+                </ul>
+            </div>
+            <div class="product-right">
+                <div class="right-title">
+                    <h2 th:text="${currentCategory.spec.name}"></h2>
+                </div>
+                <div class="right-details">
+                    <div class="details-left">
+                        <div class="details-img">
+                            <img th:each="image : ${product.spec.images}" th:src="@{${image.url}}"  />
+                        </div>
+                        <div class="details-swiper">
+                            <div class="swiper-container">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide" th:each="image : ${product.spec.images}">
+                                        <a>
+                                            <img th:src="@{${image.url}}"  />
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                        </div>
+                    </div>
+                    <div class="details-right">
+                        <div class="details-top">
+                            <h3 th:text="${product.spec.name}"></h3>
+                            <p th:text="${product.spec.description}"></p>
+                        </div>
+                        <div class="details-bottom">
+                            <h4><strong>产品标准</strong></h4>
+                            <p style="white-space: normal;" th:each="standard : ${product.spec.standards}">
+                                <strong th:text="${standard.name}"></strong>: <span th:text="${standard.value}"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-related">
+                    <h3>相关产品</h3>
+<!--                    <div th:text="${relativeProducts}"></div>-->
+                    <div class="related-list">
+                        <a th:each="product : ${relativeProducts}" th:href="@{/product/{slug}(slug=${product.metadata.name})}">
+                            <img th:src="@{${product.spec.images[0].url}}" align='left'  />
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</th:block>
+</html>
