@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html
-  xmlns:th="https://www.thymeleaf.org"
-  th:replace="~{layout :: html(head = ~{::head},content = ~{::content})}">
+        xmlns:th="https://www.thymeleaf.org"
+        th:replace="~{layout :: html(head = ~{::head},content = ~{::content})}">
 <th:block th:fragment="head">
     <link rel="stylesheet" type="text/css" th:href="@{/assets/css/product.css}"/>
 </th:block>
@@ -10,14 +10,14 @@
     <div class="banner">
         <img th:src="@{/assets/img/Product.jpg}"/>
         <div class="banner-txt">
-            <h1>耐用、可靠、熟练</h1>
+            <h1>Durable, Reliable, Skillfully Crafted</h1>
         </div>
     </div>
 
     <div class="product-content">
         <div class="container">
             <div class="product-left wow fadeInUp">
-                <h3>产品系列</h3>
+                <h3>Product Categories</h3>
                 <ul class="product-menu">
                     <li th:each="category : ${categories}"
                         th:class="${currentCategory.metadata.name} == ${category.metadata.name} ? 'active' : ''">
@@ -47,51 +47,51 @@
                     </a>
                 </div>
 
-                <!-- 仅在有结果且总页数大于1时显示分页组件 -->
+                <!-- Pagination displayed only if there are results and total pages > 1 -->
                 <div class="news_page"
                      th:if="${pageUtil.totalPage > 1 && !#lists.isEmpty(pageUtil.items)}"
                      th:with="currentPage=${pageUtil.currentPage}, totalPages=${pageUtil.totalPage}">
 
-                    <!-- 上一页按钮 -->
+                    <!-- Previous Page Button -->
                     <a th:if="${pageUtil.hasPrevious}"
                        th:href="@{/productlist/{slug}/{page}(page=${currentPage - 1},slug=${currentCategory.metadata.name})}"
-                       class="page_prev">上一页</a>
+                       class="page_prev">Previous</a>
 
-                    <!-- 页码 -->
+                    <!-- Page Numbers -->
                     <div class="page_num">
                         <th:block th:with="
                             startPage=${currentPage <= 3 ? 1 : (currentPage >= totalPages - 2 ? totalPages - 4 : currentPage - 2)},
                             endPage=${startPage + 4 < totalPages ? startPage + 4 : totalPages}">
 
-                            <!-- 显示第一页（如果不在范围内） -->
+                            <!-- Display the first page (if not in range) -->
                             <a th:if="${startPage > 1}"
                                th:href="@{/productlist/{slug}/1(slug=${currentCategory.metadata.name})}"
                                th:text="1"></a>
 
-                            <!-- 开始的省略号 -->
+                            <!-- Starting Ellipsis -->
                             <span th:if="${startPage > 2}">...</span>
 
-                            <!-- 显示页码范围 -->
+                            <!-- Display page range -->
                             <a th:each="page : ${#numbers.sequence(startPage, endPage)}"
                                th:href="@{/productlist/{slug}/{page}(page=${page},slug=${currentCategory.metadata.name})}"
                                th:class="${page == currentPage} ? 'page_now' : ''"
                                th:text="${page}">
                             </a>
 
-                            <!-- 结束的省略号 -->
+                            <!-- Ending Ellipsis -->
                             <span th:if="${endPage < totalPages - 1}">...</span>
 
-                            <!-- 显示最后一页（如果不在范围内） -->
+                            <!-- Display the last page (if not in range) -->
                             <a th:if="${endPage < totalPages}"
                                th:href="@{/productlist/{slug}/{page}(page=${totalPages},slug=${currentCategory.metadata.name})}"
                                th:text="${totalPages}"></a>
                         </th:block>
                     </div>
 
-                    <!-- 下一页按钮 -->
+                    <!-- Next Page Button -->
                     <a th:if="${pageUtil.hasNext}"
                        th:href="@{/productlist/{slug}/{page}(page=${currentPage + 1},slug=${currentCategory.metadata.name})}"
-                       class="page_next">下一页</a>
+                       class="page_next">Next</a>
                 </div>
             </div>
         </div>

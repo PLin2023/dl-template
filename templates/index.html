@@ -2,16 +2,13 @@
 <html xmlns:th="https://www.thymeleaf.org" th:replace="~{layout :: html(head = ~{::head}, content = ~{::content})}">
 <th:block th:fragment="head">
   <meta charset="utf-8" />
-  <meta http-equiv=”X-UA-Compatible” content=”IE=Edge,chrome=1″/>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
   <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=0" />
   <meta name="format-detection" content="email=no" />
   <meta name="format-detection" content="telephone=no" />
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
-  <title>瓯明阀门集团有限公司 - 官方网站</title>
   <meta name="keywords" />
-  <meta name="description" content="Ouming Valve Group Co.,Ltd.  " />
 </th:block>
-
 
 <th:block th:fragment="content">
 
@@ -25,7 +22,6 @@
             <div class="banner-txt">
               <h1 th:utext="${banner.spec.title}"></h1>
               <h3 th:utext="${banner.spec.subtitle}"></h3>
-              <!--<img src="~/Dist/img/pingzi.png"/>>-->
             </div>
           </a>
         </div>
@@ -54,10 +50,10 @@
   <div class="index2">
     <div class="container" th:with="homeAbout = ${homeAboutFinder.get()}">
       <div class="index2-left">
-        <h1 class="wow fadeInUp">关于<strong th:text="${homeAbout.spec.name}"></strong></h1>
+        <h1 class="wow fadeInUp">About <strong th:text="${homeAbout.spec.name}"></strong></h1>
         <p class="wow fadeInUp" th:text="${homeAbout.spec.description}">
         </p>
-        <a class="wow fadeInUp" th:href="@{${homeAbout.spec.aboutUrl}}"><span>查看更多</span></a>
+        <a class="wow fadeInUp" th:href="@{${homeAbout.spec.aboutUrl}}"><span>Learn More</span></a>
         <div class="left-img wow fadeInUp">
           <a th:href="@{${homeAbout.spec.link1Url}}">
             <img th:src="@{${homeAbout.spec.link1Image}}" />
@@ -84,7 +80,7 @@
   </div>
   <div class="index3">
     <div class="container">
-      <h1 class="wow fadeInUp">应用领域</h1>
+      <h1 class="wow fadeInUp">Application Areas</h1>
       <div class="index3-list wow fadeInUp">
         <ul>
           <li class="active" th:each="applicationArea : ${applicationAreaFinder.listAll()}">
@@ -104,45 +100,45 @@
   </div>
   <div class="index4">
     <div class="container">
-      <h1 class="wow fadeInUp">产品中心</h1>
-      <a class="wow fadeInUp" href="/Product-6096.html">
-        <h2>法兰球阀</h2>
+      <h1 class="wow fadeInUp">Product Center</h1>
+      <a class="wow fadeInUp" href="/en/Product-6096.html">
+        <h2>Flanged Ball Valve</h2>
         <img th:src="@{/assets/img/index4-1.png}" />
         <span></span>
       </a>
-      <a class="wow fadeInUp" href="/Product-6097.html">
-        <h2>多通球阀</h2>
+      <a class="wow fadeInUp" href="/en/Product-6097.html">
+        <h2>Multi-port Ball Valve</h2>
         <img th:src="@{/assets/img/index4-2.png}" />
         <span></span>
       </a>
-      <a class="wow fadeInUp" href="/Product-6095.html">
-        <h2>片式球阀</h2>
+      <a class="wow fadeInUp" href="/en/Product-6095.html">
+        <h2>Wafer Ball Valve</h2>
         <img th:src="@{/assets/img/index4-3.png}" />
         <span></span>
       </a>
-      <a class="wow fadeInUp" href="/Product-6098.html">
-        <h2>自动阀</h2>
+      <a class="wow fadeInUp" href="/en/Product-6098.html">
+        <h2>Automatic Valve</h2>
         <img th:src="@{/assets/img/index4-4.png}" />
         <span></span>
       </a>
     </div>
   </div>
   <div class="index5">
-    <h1>核心优势</h1>
+    <h1>Core Advantages</h1>
     <ul class="index5-list" th:each="advantage : ${advantageFinder.listAll()}">
       <li class="list-img wow fadeInUp"><img th:src="@{${advantage.spec.image}}" /></li>
       <li class="list-txt wow fadeInUp">
         <div class="index5-txt">
           <h2 th:text="${advantage.spec.title}"></h2>
           <p th:text="${advantage.spec.description}"></p>
-          <a th:href="${advantage.spec.moreLink}"><span>查看更多</span></a>
+          <a th:href="${advantage.spec.moreLink}"><span>Learn More</span></a>
         </div>
       </li>
     </ul>
   </div>
   <div class="index6">
     <div class="container">
-      <h1 class="wow fadeInUp">新闻资讯</h1>
+      <h1 class="wow fadeInUp">News & Information</h1>
       <div class="index6-swiper">
         <div class="swiper-container">
           <div class="swiper-wrapper" th:with="posts = ${postFinder.listByCategory(1,5,'category-fthon')}">
@@ -162,7 +158,6 @@
                 </div>
               </a>
             </div>
-
           </div>
         </div>
         <div class="swiper-button-next"></div>
@@ -170,7 +165,6 @@
       </div>
     </div>
   </div>
-
 
 </th:block>
 

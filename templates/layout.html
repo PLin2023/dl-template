@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html
-  lang="en"
-  xmlns:th="https://www.thymeleaf.org"
-  th:fragment="html (head,content)"
+        lang="en"
+        xmlns:th="https://www.thymeleaf.org"
+        th:fragment="html (head,content)"
 >
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1, maximum-scale=2"
+          name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=2"
   />
+  <link rel="icon" type="image/png" th:href="@{${site.favicon}}">
   <title th:text="${site.title}"></title>
   <link rel="stylesheet" th:href="@{/assets/css/style.css}" />
   <script th:src="@{/assets/js/main.js}"></script>
@@ -28,8 +29,8 @@
 </head>
 <body th:style="'background-color: '+${theme.config.style.background_color ?: '#f2f2f2'}">
 <header>
-  <a class="logo" href="/" target="_blank"><img th:src="@{/assets/img/om_logo.svg}" /></a>
-  <a class="header_en" href="//www.omvalve.com"><span>English</span></a>
+  <a class="logo" href="/" target="_blank"><img th:src="@{${site.logo}}" alt="Company Logo" /></a>
+  <a class="header_en" href="/#"><span>Russian</span></a>
   <ul class="header-icon">
     <li></li>
     <li></li>
@@ -39,18 +40,18 @@
     <li class="" th:each="menuItem : ${menuItems}">
       <h4>
         <a
-          th:href="@{${menuItem.status.href}}"
-          th:target="${menuItem.spec.target?.value}"
-          th:text="${menuItem.status.displayName}"
+                th:href="@{${menuItem.status.href}}"
+                th:target="${menuItem.spec.target?.value}"
+                th:text="${menuItem.status.displayName}"
         >
         </a>
       </h4>
       <div class="headTwo" th:if="${menuItem.children} != null" th:with="children = ${menuItem.children}">
         <p th:each="child : ${children}">
           <a
-            th:href="@{${child.status.href}}"
-            th:target="${child.spec.target?.value}"
-            th:text="${child.status.displayName}"
+                  th:href="@{${child.status.href}}"
+                  th:target="${child.spec.target?.value}"
+                  th:text="${child.status.displayName}"
           >
           </a>
         </p>
@@ -64,113 +65,107 @@
 
 <div class="chat-online">
   <div class="chat-button">
-    <span><img th:src="@{/assets/img/chat.png}" /><img th:src="@{/assets/img/chat-icon.png}" /></span>
-    <strong>在线聊天</strong>
+    <span><img th:src="@{/assets/img/chat.png}" alt="Chat" /><img th:src="@{/assets/img/chat-icon.png}" alt="Chat Icon" /></span>
+    <strong>Online Chat</strong>
   </div>
   <div class="chat-content">
     <span></span>
-    <h3>在线聊天</h3>
-    <h4>您好，在线聊天前请在这里留下您的姓名和电子邮件，这样我们就不会错过您的留言并顺利与您联系。</h4>
+    <h3>Online Chat</h3>
+    <h4>Hello, please leave your name and email before starting the online chat so we won't miss your message and can contact you smoothly.</h4>
     <ul class="chat-form">
       <li>
-        <h5>*<strong>姓名 :</strong></h5>
+        <h5>*<strong>Name:</strong></h5>
         <input type="text" id="txtName" name="txtName" value="" />
       </li>
       <li>
-        <h5>*<strong>电话 :</strong></h5>
+        <h5>*<strong>Phone:</strong></h5>
         <input type="text" id="txtPhone" name="txtPhone" value="" />
       </li>
       <li>
-        <h5>*<strong>邮件 :</strong></h5>
+        <h5>*<strong>Email:</strong></h5>
         <input type="text" id="txtEmail" name="txtEmail" value="" />
       </li>
       <li>
-        <h5>*<strong>内容 :</strong></h5>
+        <h5>*<strong>Content:</strong></h5>
         <textarea name="txtContent" id="txtContent" rows="" cols=""></textarea>
       </li>
       <li>
-        <button id="BtnMes">立即发送</button>
+        <button id="BtnMes">Send Now</button>
       </li>
     </ul>
   </div>
 </div>
 <footer>
   <div class="container">
-    <a class="footer-logo wow fadeInUp" href="index.html"><img th:src="@{/assets/img/logoW.svg}" /></a>
+    <a class="footer-logo wow fadeInUp" href="index.html"><img th:src="@{${site.logo}}" alt="Company Logo" /></a>
     <ul class="footer-menu wow fadeInUp">
       <li>
-        <h4>关于瓯明</h4>
-        <p><a href="/About">公司总部</a></p>
-        <p><a href="/About/foundry">铸造基地</a></p>
+        <h4>About Ouming</h4>
+        <p><a href="/aboutus">Company Headquarters</a></p>
+        <p><a href="/foundry">Foundry Base</a></p>
       </li>
       <li>
-        <h4>产品中心</h4>
-        <p><a href="/Product-6095.html">片式球阀</a></p>
-        <p><a href="/Product-6096.html">法兰球阀</a></p>
-        <p><a href="/Product-6097.html">多通球阀</a></p>
-        <p><a href="/Product-6098.html">自动阀</a></p>
+        <h4>Product Center</h4>
+        <p th:each="category: ${productCategoryFinder.listAll()}">
+          <a th:href="@{/productlist/{slug}(slug=${category.metadata.name})}" th:text="${category.spec.name}"></a>
+        </p>
       </li>
       <li>
-        <h4>核心优势</h4>
-        <p><a href="/WhyUs">质量控制</a></p>
-        <p><a href="/WhyUs/Process">生产控制</a></p>
-        <p><a href="/WhyUs/TechControl">技术支持</a></p>
+        <h4>Core Advantages</h4>
+        <p><a href="/quality">Quality Control</a></p>
+        <p><a href="/process">Production Control</a></p>
+        <p><a href="/techcontrol">Technical Support</a></p>
       </li>
       <li>
-        <h4>联系方式</h4>
-        <p>地址: 浙江省温州市龙湾区永中街道天中路1555号</p>
-        <p>电话: 0577-86878788</p>
-        <p>传真: 0577-86371713</p>
-        <p>邮箱: ouming@ouming.com</p>
+        <h4>Contact Information</h4>
+        <p>Address: xxxxxxxxxxxxxxx</p>
+        <p>Phone: xxxx-xxxxxxx</p>
+        <p>Fax: xxxx-xxxxxxx</p>
+        <p>Email: xxxx@xxxxx.com</p>
       </li>
     </ul>
     <div class="footer-contact wow fadeInUp">
-      <h3>联系我们</h3>
+      <h3>Contact Us</h3>
       <div class="footer-input">
-        <input placeholder="姓名 *" type="text" name="txtName" id="txtName1" value="" />
-        <input placeholder="邮箱 *" type="text" name="txtEmail" id="txtEmail1" value="" />
+        <input placeholder="Name *" type="text" name="txtName" id="txtName1" value="" />
+        <input placeholder="Email *" type="text" name="txtEmail" id="txtEmail1" value="" />
       </div>
-      <textarea placeholder="内容 *" name="txtContent1" id="txtContent1" rows="" cols=""></textarea>
-      <button id="BtnMesSend">提 交</button>
+      <textarea placeholder="Content *" name="txtContent1" id="txtContent1" rows="" cols=""></textarea>
+      <button id="BtnMesSend">Submit</button>
     </div>
     <div class="footer-share">
       <a href="https://twitter.com/CmOlthf1vPuxlwD" rel="nofollow"><img
-        th:src="@{/assets/img/fs1.png}" /></a>
+              th:src="@{/assets/img/fs1.png}" alt="Twitter" /></a>
       <a href="https://www.facebook.com/oumingvalve" rel="nofollow"><img
-        th:src="@{/assets/img/fs2.png}" /></a>
+              th:src="@{/assets/img/fs2.png}" alt="Facebook" /></a>
       <a href="https://www.linkedin.com/in/helen-zhu-a84a31145/" rel="nofollow"><img
-        th:src="@{/assets/img/fs3.png}" /></a>
+              th:src="@{/assets/img/fs3.png}" alt="LinkedIn" /></a>
       <a href="https://www.youtube.com/channel/UCzLdRCTZOqSG58s9e334xqw"><img
-        th:src="@{/assets/img/fs4.png}" /></a>
-      <a href="skype:18757724201?chat"><img th:src="@{/assets/img/fs5.png}" /></a>
+              th:src="@{/assets/img/fs4.png}" alt="YouTube" /></a>
+      <a href="skype:18757724201?chat"><img th:src="@{/assets/img/fs5.png}" alt="Skype" /></a>
       <a href="https://api.whatsapp.com/send?phone=+8618757724201&text=Hello"><img
-        th:src="@{/assets/img/fs6.png}" /></a>
+              th:src="@{/assets/img/fs6.png}" alt="WhatsApp" /></a>
     </div>
     <div class="footer-bottom">
-      <p>Copyright © 2020 瓯明阀门集团有限公司 版权所有 <a href="//beian.miit.gov.cn" rel="nofollow"
-                                                           target="_blank"
-                                                           style="color:#fff;">浙ICP备19009122号-1</a></p>
+      <p>Copyright © 2024 Donglnan Valve Group Co., Ltd. All Rights Reserved <a href="//beian.miit.gov.cn" rel="nofollow"
+                                                                              target="_blank"
+                                                                              style="color:#fff;">闽ICP备xxxx号-1</a></p>
     </div>
   </div>
 
   <script>
-
+    // JavaScript for BtnMesSend (footer contact form)
     $("#BtnMesSend").click(function() {
       if ($("#txtName1").val() == "") {
-
-        swal({ title: " Please enter Name！", text: " " });
+        swal({ title: "Please enter Name!", text: " " });
         return false;
       }
-
-
       if ($("#txtEmail1").val() == "") {
-        swal({ title: "Please enter E-Mail ！", text: " " });
-
+        swal({ title: "Please enter E-Mail!", text: " " });
         return false;
       }
       if ($("#txtContent1").val() == "") {
-        swal({ title: "Please enter Content ！", text: " " });
-
+        swal({ title: "Please enter Content!", text: " " });
         return false;
       }
       $.ajax({
@@ -186,7 +181,7 @@
         success: function(data) {
           if (data.apiVersion) {
             swal({
-              title: "Success ",
+              title: "Success",
               text: "Thanks",
               timer: 1000,
               type: "success",
@@ -196,9 +191,7 @@
               $("#txtPhone").attr("value", "");
               $("#txtEmail").attr("value", "");
               $("#txtContent").attr("value", "");
-
               swal.close();
-              4;
             });
           } else {
             swal({
@@ -208,14 +201,12 @@
               type: "error",
               showConfirmButton: false,
             }, function() {
-              // $(".modal-search-doctor").modal('hide')
               swal.close();
             });
           }
         },
       });
     });
-
   </script>
 
 </footer>
@@ -232,22 +223,22 @@
 <script th:src="@{/assets/js/tech.js}"  type="text/javascript" charset="utf-8"></script>
 <script th:src="@{/assets/js/valve.js}"  type="text/javascript" charset="utf-8"></script>
 <script>
+  // JavaScript for BtnMes (online chat form)
   $("#BtnMes").click(function() {
     if ($("#txtName").val() == "") {
-      swal({ title: " Please enter Name！", text: " " });
+      swal({ title: "Please enter Name!", text: " " });
       return false;
     }
-
     if ($("#txtPhone").val() == "") {
-      swal({ title: "Please enter Phone ！", text: " " });
+      swal({ title: "Please enter Phone!", text: " " });
       return false;
     }
     if ($("#txtEmail").val() == "") {
-      swal({ title: "Please enter E-Mail ！", text: " " });
+      swal({ title: "Please enter E-Mail!", text: " " });
       return false;
     }
     if ($("#txtContent").val() == "") {
-      swal({ title: "Please enter Content ！", text: " " });
+      swal({ title: "Please enter Content!", text: " " });
       return false;
     }
     $.ajax({
@@ -263,19 +254,12 @@
       success: function(data) {
         if (data.Success) {
           swal({
-            title: "Success ",
+            title: "Success",
             text: "Thanks",
             timer: 1000,
             type: "success",
             showConfirmButton: false,
           }, function() {
-            //// $(".modal-search-doctor").modal('hide')
-            //setTimeout(function () {
-            //    getPage(1)
-            //    //$(document).on('click', '.modal-search-doctor tbody tr', function () {
-            //    //    $('.modal-search-doctor-details').fadeIn();
-            //    //})
-            //}, 300)
             $("#txtName").attr("value", "");
             $("#txtPhone").attr("value", "");
             $("#txtEmail").attr("value", "");
@@ -290,7 +274,6 @@
             type: "error",
             showConfirmButton: false,
           }, function() {
-            // $(".modal-search-doctor").modal('hide')
             swal.close();
           });
         }
@@ -300,35 +283,33 @@
 </script>
 
 <script>
+  // JavaScript for SendMess2 (additional contact form, if needed)
   $(function() {
     $("#SendMess2").click(function() {
       if ($("#txtName2").val() == "") {
         swal({
-          title: "请输入姓名！",
+          title: "Please enter name!",
           text: " ",
           type: "warning"
         });
         return false;
       }
-
       if ($("#txtEmail2").val() == "") {
         swal({
-          title: "请输入邮箱！",
+          title: "Please enter email!",
           text: " ",
           type: "warning"
         });
         return false;
       }
-
       if ($("#txtContent2").val() == "") {
         swal({
-          title: "请输入内容！",
+          title: "Please enter content!",
           text: " ",
           type: "warning"
         });
         return false;
       }
-
       $.ajax({
         type: "POST",
         url: "/apis/api.consultation.plugin.halo.run/v1alpha1/consultations",
@@ -344,8 +325,8 @@
         success: function(data) {
           if (data.apiVersion) {
             swal({
-              title: "提交成功",
-              text: "谢谢您的留言",
+              title: "Submission Successful",
+              text: "Thank you for your message",
               type: "success",
               timer: 1000,
               showConfirmButton: false
@@ -359,8 +340,8 @@
             });
           } else {
             swal({
-              title: "错误",
-              text: data.Message || "提交失败，请稍后再试",
+              title: "Error",
+              text: data.Message || "Submission failed, please try again later",
               type: "error",
               timer: 1000,
               showConfirmButton: false
@@ -369,8 +350,8 @@
         },
         error: function() {
           swal({
-            title: "错误",
-            text: "提交失败，请稍后再试",
+            title: "Error",
+            text: "Submission failed, please try again later",
             type: "error",
             timer: 1000,
             showConfirmButton: false
@@ -379,7 +360,6 @@
       });
     });
   });
-
 </script>
 
 </html>

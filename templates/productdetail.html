@@ -11,13 +11,13 @@
     <div class="banner">
         <img th:src="@{/assets/img/Product.jpg}" />
         <div class="banner-txt">
-            <h1>耐用、可靠、熟练</h1>
+            <h1>Durable, Reliable, Skillfully Crafted</h1>
         </div>
     </div>
     <div class="product-content">
         <div class="container">
             <div class="product-left">
-                <h3>产品系列</h3>
+                <h3>Product Categories</h3>
                 <ul class="product-menu">
                     <li th:each="category : ${categories}" th:class="${currentCategory.metadata.name} == ${category.metadata.name} ? 'active' : ''">
                         <h4>
@@ -55,7 +55,7 @@
                             <p th:text="${product.spec.description}"></p>
                         </div>
                         <div class="details-bottom">
-                            <h4><strong>产品标准</strong></h4>
+                            <h4><strong>Product Standards</strong></h4>
                             <p style="white-space: normal;" th:each="standard : ${product.spec.standards}">
                                 <strong th:text="${standard.name}"></strong>: <span th:text="${standard.value}"></span>
                             </p>
@@ -63,8 +63,7 @@
                     </div>
                 </div>
                 <div class="right-related">
-                    <h3>相关产品</h3>
-<!--                    <div th:text="${relativeProducts}"></div>-->
+                    <h3>Related Products</h3>
                     <div class="related-list">
                         <a th:each="product : ${relativeProducts}" th:href="@{/product/{slug}(slug=${product.metadata.name})}">
                             <img th:src="@{${product.spec.images[0].url}}" align='left'  />

@@ -10,29 +10,29 @@
     <div class="banner">
         <img th:src="@{/assets/img/contact.jpg}" />
         <div class="banner-txt">
-            <h2>营销网络包括许多国家和地区<br/>广受客户好评</h2>
+            <h2>Our Marketing Network Covers<br/>Many Countries and Regions</h2>
         </div>
     </div>
     <div class="contact1">
         <div class="container">
-            <h1><strong>联系我们</strong></h1>
+            <h1><strong>Contact Us</strong></h1>
             <ul>
                 <li>
-                    <h2>铸造基地</h2>
+                    <h2>Foundry Base</h2>
                     <div class="contact-box">
-                        <p><span>地址:</span><em>浙江省温州市龙湾区空港新区金海一道896号</em></p>
-                        <p><span>电话:</span><em>0577-8687 8788</em></p>
-                        <p><span>传真:</span><em>0577-8637 1713</em></p>
-                        <p><span>邮箱:</span><em>ouming@ouming.com</em></p>
+                        <p><span>Address:</span><em>No. 896, Jinhai 1st Road, Airport New District, Longwan, Wenzhou, Zhejiang, China</em></p>
+                        <p><span>Phone:</span><em>+86 577-8687 8788</em></p>
+                        <p><span>Fax:</span><em>+86 577-8637 1713</em></p>
+                        <p><span>Email:</span><em>ouming@ouming.com</em></p>
                     </div>
                 </li>
                 <li>
-                    <h2>公司总部</h2>
+                    <h2>Headquarters</h2>
                     <div class="contact-box">
-                        <p><span>地址:</span><em>浙江省温州市龙湾区永中街道天中路1555号</em></p>
-                        <p><span>电话:</span><em>0577-8687 8788</em></p>
-                        <p><span>传真:</span><em>0577-8637 1713</em></p>
-                        <p><span>邮箱:</span><em>ouming@ouming.com</em></p>
+                        <p><span>Address:</span><em>No. 1555, Tianzhong Road, Yongzhong Street, Longwan, Wenzhou, Zhejiang, China</em></p>
+                        <p><span>Phone:</span><em>+86 577-8687 8788</em></p>
+                        <p><span>Fax:</span><em>+86 577-8637 1713</em></p>
+                        <p><span>Email:</span><em>ouming@ouming.com</em></p>
                     </div>
                 </li>
             </ul>
@@ -41,30 +41,30 @@
     <div class="contact2">
         <div class="container">
             <div class="contact2-title">
-                <h1><strong>在线留言</strong></h1>
-                <p>请就我们的产品和服务与我们联系。</p>
+                <h1><strong>Online Message</strong></h1>
+                <p>Please contact us regarding our products and services.</p>
             </div>
             <div class="contact-form">
                 <ul class="from-input">
                     <li>
-                        <span>姓名 :</span>
+                        <span>Name:</span>
                         <input type="text" id="txtName2" name="txtName" value="" />
                     </li>
                     <li>
-                        <span>电话 :</span>
+                        <span>Phone:</span>
                         <input type="tel" id="txtPhone2" name="txtPhone" value="" />
                     </li>
                     <li>
-                        <span>邮箱 :</span>
+                        <span>Email:</span>
                         <input type="email" id="txtEmail2" name="txtEmail" value="" />
                     </li>
                     <li></li>
                 </ul>
                 <div class="from-textarea">
-                    <span>内容 :</span>
+                    <span>Message:</span>
                     <textarea name="txtContent" id="txtContent2" rows="" cols=""></textarea>
                 </div>
-                <button id="SendMess2">提 交</button>
+                <button id="SendMess2">Submit</button>
             </div>
         </div>
     </div>
@@ -74,44 +74,45 @@
     <script type="text/javascript">
         $(function(){
 
-            //创建和初始化地图函数：
+            // Create and initialize the map
             function initMap() {
-                createMap(); //创建地图
-                setMapEvent(); //设置地图事件
-                addMapControl(); //向地图添加控件
-                addMarker(); //向地图中添加marker
+                createMap(); // Create the map
+                setMapEvent(); // Set map events
+                addMapControl(); // Add controls to the map
+                addMarker(); // Add marker to the map
             }
 
-            //创建地图函数：113.312704,34.782877
+            // Create the map function
             function createMap() {
-                var map = new BMap.Map("dituContent"); //在百度地图容器中创建一个地图
-                var point = new BMap.Point(120.812429, 27.902435); //定义一个中心点坐标
-                map.centerAndZoom(point, 19); //设定地图的中心点和坐标并将地图显示在地图容器中
-                window.map = map; //将map变量存储在全局
+                var map = new BMap.Map("dituContent"); // Create a map in the Baidu Map container
+                var point = new BMap.Point(120.812429, 27.902435); // Define a center point coordinate
+                map.centerAndZoom(point, 19); // Set the center point and zoom level of the map
+                window.map = map; // Store the map variable globally
             }
 
-            //地图事件设置函数：
+            // Set map events
             function setMapEvent() {
-                map.enableDragging(); //启用地图拖拽事件，默认启用(可不写)
-                map.disableScrollWheelZoom(); //禁用地图滚轮放大缩小，默认禁用(可不写)
-                map.enableDoubleClickZoom(); //启用鼠标双击放大，默认启用(可不写)
-                map.enableKeyboard(); //启用键盘上下左右键移动地图
+                map.enableDragging(); // Enable map dragging (default enabled)
+                map.disableScrollWheelZoom(); // Disable map scroll wheel zoom (default disabled)
+                map.enableDoubleClickZoom(); // Enable double-click zoom (default enabled)
+                map.enableKeyboard(); // Enable keyboard arrow keys to move the map
             }
 
-            //地图控件添加函数：
+            // Add controls to the map
             function addMapControl() {
-                //向地图中添加缩放控件
+                // Add zoom control to the map
                 var ctrl_nav = new BMap.NavigationControl({ anchor: BMAP_ANCHOR_TOP_LEFT, type: BMAP_NAVIGATION_CONTROL_LARGE });
                 map.addControl(ctrl_nav);
-                //向地图中添加比例尺控件
+                // Add scale control to the map
                 var ctrl_sca = new BMap.ScaleControl({ anchor: BMAP_ANCHOR_BOTTOM_LEFT });
                 map.addControl(ctrl_sca);
             }
 
-            //标注点数组
-            var markerArr = [{ title: "浙江瓯明流体铸业有限公司<br />", content: "地址：浙江省温州市龙湾区永中街道天中路1555号<br />电话： 0577-8687 8788", point: "120.812429|27.902435", isOpen: 1, icon: { w: 23, h: 25, l: 46, t: 21, x: 9, lb: 12 } }
+            // Marker array
+            var markerArr = [{ title: "Zhejiang Ouming Fluid Casting Co., Ltd.<br />", content: "Address: No. 1555, Tianzhong Road, Yongzhong Street, Longwan, Wenzhou, Zhejiang, China<br />Phone: +86 577-8687 8788", point: "120.812429|27.902435", isOpen: 1, icon: { w: 23, h: 25, l: 46, t: 21, x: 9, lb: 12 } }
             ];
-            //创建marker  120.837158,27.875314
+
+            // Create marker
             function addMarker() {
                 for (var i = 0; i < markerArr.length; i++) {
                     var json = markerArr[i];
@@ -153,23 +154,22 @@
                     })()
                 }
             }
-            //创建InfoWindow
+
+            // Create InfoWindow
             function createInfoWindow(i) {
                 var json = markerArr[i];
                 var iw = new BMap.InfoWindow("<b class='iw_poi_title' title='" + json.title + "'>" + json.title + "</b><div class='iw_poi_content'>" + json.content + "</div>");
                 return iw;
             }
-            //创建一个Icon
+
+            // Create an Icon
             function createIcon(json) {
                 var icon = new BMap.Icon("http://app.baidu.com/map/images/us_mk_icon.png", new BMap.Size(json.w, json.h), { imageOffset: new BMap.Size(-json.l, -json.t), infoWindowOffset: new BMap.Size(json.lb + 5, 1), offset: new BMap.Size(json.x, json.h) })
                 return icon;
             }
 
-            initMap(); //创建和初始化地图
+            initMap(); // Create and initialize the map
         })
-
-
-
     </script>
 
 </th:block>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html
-  xmlns:th="https://www.thymeleaf.org"
-  th:replace="~{layout :: html(head = ~{::head},content = ~{::content})}"
+        xmlns:th="https://www.thymeleaf.org"
+        th:replace="~{layout :: html(head = ~{::head},content = ~{::content})}"
 >
 <th:block th:fragment="head">
   <link rel="stylesheet" type="text/css" th:href="@{/assets/css/news.css}" />
@@ -10,161 +10,87 @@
   <div class="banner">
     <img th:src="@{/assets/img/news.jpg}" />
     <div class="banner-txt">
-      <h1>了解阀门动态<br />并关注更多新闻</h1>
+      <h1>Stay Updated on Valve News<br />and More</h1>
     </div>
   </div>
   <div class="news-content">
     <div class="container">
       <div class="news-left">
         <div class="news-menu wow fadeInUp">
-            <a href="/categories/company"  th:class="${category.spec.slug}  == 'company' ? 'active' : ''">公司新闻</a>
-            <a href="/categories/industry" th:class="${category.spec.slug}  == 'industry' ? 'active' : ''">行业资讯</a>
+          <a href="/categories/company" th:class="${category.spec.slug} == 'company' ? 'active' : ''">Company News</a>
+          <a href="/categories/industry" th:class="${category.spec.slug} == 'industry' ? 'active' : ''">Industry News</a>
         </div>
         <div id="datactt">
           <div class="news-list wow fadeInUp">
-            <a class="wow fadeInUp" th:each="post : ${posts.items}"  th:href="${post.status.permalink}">
-              <img th:src="@{${post.spec.cover}}" th:alt="${post.spec.title}"
-                   th:title="${post.spec.title}" />
+            <a class="wow fadeInUp" th:each="post : ${posts.items}" th:href="${post.status.permalink}">
+              <img th:src="@{${post.spec.cover}}" th:alt="${post.spec.title}" th:title="${post.spec.title}" />
               <div class="list-txt">
-                <h5  th:text="${#temporals.format(post.spec.publishTime, 'yyyy-MM-dd')}"></h5>
+                <h5 th:text="${#temporals.format(post.spec.publishTime, 'yyyy-MM-dd')}"></h5>
                 <h2 th:text="${post.spec.title}"></h2>
                 <p th:text="${post.spec.excerpt.raw}"></p>
-                <span><em>查看更多</em></span>
+                <span><em>Read More</em></span>
               </div>
             </a>
           </div>
 
-          <div class="news_page" th:with="currentPage=${posts.page}, totalPages=${posts.totalPages}">
-            <!-- 上一页按钮 -->
+          <div class="news_page" th:if="${posts.totalPages > 1 && !#lists.isEmpty(posts.items)}" th:with="currentPage=${posts.page}, totalPages=${posts.totalPages}">
+            <!-- Previous Page Button -->
             <a th:if="${posts.hasPrevious()}"
                th:href="@{/categories/{slug}/page/{page}(page=${currentPage - 1},slug=${category.spec.slug})}"
-               class="page_prev">上一页</a>
+               class="page_prev">Previous</a>
 
-            <!-- 页码 -->
+            <!-- Page Numbers -->
             <div class="page_num">
               <th:block th:with="
         startPage=${currentPage <= 3 ? 1 : (currentPage >= totalPages - 2 ? totalPages - 4 : currentPage - 2)},
         endPage=${startPage + 4 < totalPages ? startPage + 4 : totalPages}">
 
-                <!-- 显示第一页（如果不在范围内） -->
+                <!-- Show First Page (if not in range) -->
                 <a th:if="${startPage > 1}"
                    th:href="@{/categories/{slug}/page/1(slug=${category.spec.slug})}"
                    th:text="1"></a>
 
-                <!-- 开始的省略号 -->
+                <!-- Starting Ellipsis -->
                 <span th:if="${startPage > 2}">...</span>
 
-                <!-- 显示页码范围 -->
+                <!-- Display Page Range -->
                 <a th:each="page : ${#numbers.sequence(startPage, endPage)}"
                    th:href="@{/categories/{slug}/page/{page}(page=${page},slug=${category.spec.slug})}"
                    th:class="${page == currentPage} ? 'page_now' : ''"
                    th:text="${page}">
                 </a>
 
-                <!-- 结束的省略号 -->
+                <!-- Ending Ellipsis -->
                 <span th:if="${endPage < totalPages - 1}">...</span>
 
-                <!-- 显示最后一页（如果不在范围内） -->
+                <!-- Show Last Page (if not in range) -->
                 <a th:if="${endPage < totalPages}"
                    th:href="@{/categories/{slug}/page/{page}(page=${totalPages},slug=${category.spec.slug})}"
                    th:text="${totalPages}"></a>
               </th:block>
             </div>
 
-            <!-- 下一页按钮 -->
+            <!-- Next Page Button -->
             <a th:if="${posts.hasNext()}"
                th:href="@{/categories/{slug}/page/{page}(page=${currentPage + 1},slug=${category.spec.slug})}"
-               class="page_next">下一页</a>
+               class="page_next">Next</a>
           </div>
-
         </div>
       </div>
       <div class="news-right">
-        <div class="right-product">
-          <h3 class="wow fadeInUp">热门产品</h3>
-          <div class="product-list wow fadeInUp">
-            <a class="wow fadeInUp" href="/DetProduct-13098.html">
-              <div class="product-img">
-                <img src="/upload/9398/202012/416b3b2c7a1b4faaa43573c45a205d0d.jpg" alt=缩径三通球阀
-                     title=缩径三通球阀  />
-              </div>
-              <h4>缩径三通球阀 </h4>
-            </a>
-            <a class="wow fadeInUp" href="/DetProduct-13100.html">
-              <div class="product-img">
-                <img src="/upload/9398/202012/c73412adc568407a9a01759374554b63.jpg" alt=多口对焊球阀
-                     title=多口对焊球阀 />
-              </div>
-              <h4>多口对焊球阀</h4>
-            </a>
-            <a class="wow fadeInUp" href="/DetProduct-13109.html">
-              <div class="product-img">
-                <img src="/upload/9398/202012/380456a81a0e4f1482f2f5adb5e09bbc.jpg" alt=对夹式法兰球阀
-                     title=对夹式法兰球阀 />
-              </div>
-              <h4>对夹式法兰球阀</h4>
-            </a>
-            <a class="wow fadeInUp" href="/DetProduct-13112.html">
-              <div class="product-img">
-                <img src="/upload/9398/202012/adff9af8af224726adefeec887c6f14a.jpg" alt=三通式球阀 title=三通式球阀 />
-              </div>
-              <h4>三通式球阀</h4>
-            </a>
-            <a class="wow fadeInUp" href="/DetProduct-13116.html">
-              <div class="product-img">
-                <img src="/upload/9398/202012/edcc0c2fcaa949d2949d8ddd1f2ebb2a.jpg" alt=三通式球阀 title=三通式球阀 />
-              </div>
-              <h4>三通式球阀</h4>
-            </a>
-            <a class="wow fadeInUp" href="/DetProduct-13117.html">
-              <div class="product-img">
-                <img src="/upload/9398/202012/9936165e00924e6691a62873331aafa9.jpg" alt=二片式高平台法兰球阀
-                     title=二片式高平台法兰球阀 />
-              </div>
-              <h4>二片式高平台法兰球阀</h4>
-            </a>
-            <a class="wow fadeInUp" href="/DetProduct-13118.html">
-              <div class="product-img">
-                <img src="/upload/9398/202012/ad202160b4384bd283e4e11b5b6057a3.jpg" alt=二片式高平台法兰球阀
-                     title=二片式高平台法兰球阀 />
-              </div>
-              <h4>二片式高平台法兰球阀</h4>
-            </a>
-            <a class="wow fadeInUp" href="/DetProduct-13130.html">
-              <div class="product-img">
-                <img src="/upload/9398/202012/ea99c11d26b944ee82ff0150f8af3a1e.jpg" alt=三片式高平台球阀
-                     title=三片式高平台球阀 />
-              </div>
-              <h4>三片式高平台球阀</h4>
-            </a>
-            <a class="wow fadeInUp" href="/DetProduct-13131.html">
-              <div class="product-img">
-                <img src="/upload/9398/202012/63674fb49eb34f61b83f1958060aef77.jpg" alt=片式球阀 title=片式球阀 />
-              </div>
-              <h4>片式球阀</h4>
-            </a>
-            <a class="wow fadeInUp" href="/DetProduct-13135.html">
-              <div class="product-img">
-                <img src="/upload/9398/202012/63016c313bbe4b93a9f02f7553f2dbf3.jpg" alt=三片式高平台球阀
-                     title=三片式高平台球阀 />
-              </div>
-              <h4>三片式高平台球阀</h4>
-            </a>
-          </div>
-        </div>
         <div class="right-contact wow fadeInUp">
-          <h3>联系方式</h3>
+          <h3>Contact Information</h3>
           <div class="contact-box wow fadeInUp">
             <div class="contact-txt">
-              <p><span>地址:</span><em>浙江省温州市永中工业园区天中路1555号</em></p>
-              <p><span>电话:</span><em>0577-8687 8788</em></p>
-              <p><span>传真:</span><em>0577-8637 1713</em></p>
+              <p><span>Address:</span><em>No. 1555 Tianzhong Road, Yongzhong Industrial Park, Wenzhou, Zhejiang, China</em></p>
+              <p><span>Phone:</span><em>+86 577-8687 8788</em></p>
+              <p><span>Fax:</span><em>+86 577-8637 1713</em></p>
             </div>
-            <a href="/Contact">联系我们</a>
+            <a href="/Contact">Contact Us</a>
           </div>
           <div class="contact-share wow fadeInUp">
-            <a href="tel:0086-0577-8687 8788"><img src="/Dist/img/cs1.png" /></a>
-            <a href="#"><img src="/Dist/img/cs2.png" /></a>
+            <a href="tel:+86-577-8687 8788"><img th:src="@{/assets/img/cs1.png}" /></a>
+            <a href="#"><img th:src="@{/assets/img/cs2.png}" /></a>
           </div>
         </div>
       </div>
