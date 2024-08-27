@@ -10,10 +10,6 @@
     <div class="banner">
         <img th:src="@{/assets/img/factory.jpg}"/>
     </div>
-    <div th:with="currentPath=${#httpServletRequest.requestURI}">
-        <p th:text="${'Current pathname: ' + currentPath}"></p>
-    </div>
-
     <div class="factory1">
         <div class="container">
             <h1 class="factory-title wow fadeInUp">Our <strong>Company</strong></h1>

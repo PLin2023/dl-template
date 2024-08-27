@@ -6,6 +6,7 @@ spec:
   displayName: dl-template
   author:
     name: PeiLin
+  logo: https://halo.run/logo
   description: Valve theme
   settingName: "dl-template-setting"
   configMapName: "theme-starter-configMap"
